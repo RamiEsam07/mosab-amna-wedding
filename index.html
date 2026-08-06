@@ -3,95 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة زفاف ألفاهاشم ودينا</title>
+    <title>دعوة زفاف ألفاهاشم ودينا 💍✨</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --bg-pastel: #FFF8F6;
+            --primary-rose: #FF758F;
+            --primary-hover: #FF4D6D;
+            --soft-pink: #FFCCD5;
+            --cream-card: #FFFFFF;
+            --text-dark: #2B2D42;
+            --gold-accent: #E5A93C;
+        }
+
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-pastel);
+            color: var(--text-dark);
+            background-image: radial-gradient(#FFCCD5 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        .header-title {
-            font-family: 'Amiri', serif;
-            color: #8b6b35;
+
+        .title-font {
+            font-family: 'Changa', sans-serif;
         }
-        .card-custom {
+
+        /* Hero Cartoon Header */
+        .hero-card {
+            background: linear-gradient(135deg, #FFF0F3 0%, #FFF 100%);
+            border-radius: 35px;
+            border: 4px solid var(--soft-pink);
+            box-shadow: 0 20px 40px rgba(255, 117, 143, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-badge {
+            background-color: #FFF0F3;
+            color: var(--primary-rose);
+            border: 2px solid var(--soft-pink);
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Cartoon Cards */
+        .cute-card {
+            background-color: var(--cream-card);
+            border-radius: 25px;
+            border: 3px solid #F0E6E6;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cute-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--soft-pink);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFCCD5 100%);
+            color: var(--primary-rose);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 12px;
+        }
+
+        /* Player Styling */
+        .player-bar {
+            background: #FFFFFF;
+            border: 3px solid var(--soft-pink);
+            border-radius: 30px;
+            padding: 15px 25px;
+            box-shadow: 0 10px 30px rgba(255, 117, 143, 0.15);
+        }
+
+        .btn-play-music {
+            background-color: var(--primary-rose);
+            color: #FFF;
+            border-radius: 50px;
             border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            background: #ffffff;
-        }
-        .btn-gold {
-            background-color: #8b6b35;
-            color: white;
-            border: none;
+            padding: 10px 24px;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
-        .btn-gold:hover {
-            background-color: #6d5328;
+
+        .btn-play-music:hover {
+            background-color: var(--primary-hover);
+            color: #FFF;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        /* Form Inputs */
+        .form-control {
+            border-radius: 15px;
+            border: 2px solid #EAEAEA;
+            padding: 12px 18px;
+            font-weight: 500;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-rose);
+            box-shadow: 0 0 0 0.25rem rgba(255, 117, 143, 0.2);
+        }
+
+        .btn-send {
+            background-color: var(--primary-rose);
             color: white;
+            border-radius: 18px;
+            border: none;
+            font-weight: 700;
+            padding: 14px;
+            transition: all 0.3s ease;
         }
-        .wish-card {
-            border-right: 4px solid #8b6b35 !important;
-            border-radius: 8px;
-            background-color: #fdfbf7;
+
+        .btn-send:hover {
+            background-color: var(--primary-hover);
+            color: white;
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
         }
-        .info-box {
-            background-color: #fdfbf7;
-            border: 1px dashed #8b6b35;
-            border-radius: 12px;
+
+        /* Wishes Messages */
+        .wish-bubble {
+            background-color: #FFF;
+            border-radius: 20px;
+            border-right: 6px solid var(--primary-rose);
+            border-top: 1px solid #F3EAEA;
+            border-left: 1px solid #F3EAEA;
+            border-bottom: 1px solid #F3EAEA;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .wish-bubble:hover {
+            transform: scale(1.01);
+        }
+
+        /* Hidden YouTube iframe for background/player control */
+        #yt-player-container {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="text-center py-5 bg-white border-bottom shadow-sm">
-        <div class="container">
-            <h1 class="header-title display-4 fw-bold">دعوة زفاف ألفاهاشم ودينا</h1>
-            <p class="lead text-muted mt-2">مرحباً بكم في صفحة التهنئة ومشاركة الفرحة</p>
-            
-            <!-- Wedding Details Section -->
-            <div class="col-md-8 mx-auto mt-4">
-                <div class="info-box p-3 shadow-sm">
-                    <p class="mb-1 fw-bold text-dark fs-5">📅 موعد الزفاف: <span class="text-secondary">14 / 8</span></p>
-                    <p class="mb-0 fw-bold text-dark fs-5">📍 المكان: <span class="text-secondary">في منزلهم خلف معسكر الاحتياطي المركزي - الكلاكلة</span></p>
+    <!-- Hidden YouTube Player Container -->
+    <div id="yt-player-container">
+        <div id="youtube-player"></div>
+    </div>
+
+    <div class="container py-4">
+        <!-- Hero Card -->
+        <header class="hero-card text-center p-4 p-md-5 my-3">
+            <span class="floating-badge mb-3"><i class="fa-solid fa-heart me-2"></i>دعوة فرح زفاف</span>
+            <h1 class="title-font display-3 fw-bold text-danger my-2">ألفاهاشم ❤️ دينا</h1>
+            <p class="fs-5 text-muted mb-4">نرحب بكم في يوم فرحتنا والسيرة السعيدة ✨</p>
+
+            <!-- Information Grid -->
+            <div class="row g-3 justify-content-center mt-2">
+                <div class="col-md-5 col-6">
+                    <div class="cute-card p-3 p-md-4 text-center h-100">
+                        <div class="icon-box"><i class="fa-solid fa-calendar-heart"></i></div>
+                        <h5 class="title-font fw-bold mb-1">الموعد</h5>
+                        <p class="mb-0 text-muted fs-6">14 / 8</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-6">
+                    <div class="cute-card p-3 p-md-4 text-center h-100">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <h5 class="title-font fw-bold mb-1">الموقع</h5>
+                        <p class="mb-0 text-muted fs-6">في منزلهم خلف معسكر الاحتياطي المركزي - الكلاكلة</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <div class="container my-5">
-        <div class="row g-4">
+            <!-- Music Player Widget -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <div class="player-bar d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div class="d-flex align-items-center">
+                            <i id="music-disc-icon" class="fa-solid fa-compact-disc text-danger fs-2 me-3"></i>
+                            <div class="text-start">
+                                <span class="d-block title-font fw-bold text-danger">🎵 سيرة سودانية</span>
+                                <span class="small text-muted">ألف مبروك يا عرسان</span>
+                            </div>
+                        </div>
+                        <button id="play-btn" onclick="toggleAudio()" class="btn-play-music shadow-sm">
+                            <i id="play-icon" class="fa-solid fa-play me-2"></i><span id="play-text">تشغيل الأغنية</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form and Wishes Section -->
+        <div class="row g-4 my-2">
             <!-- Form Section -->
-            <div class="col-md-5">
-                <div class="card card-custom p-4">
-                    <h3 class="h5 fw-bold mb-3 text-secondary">أرسل تهنئتك للعروسين</h3>
+            <div class="col-lg-5">
+                <div class="cute-card p-4 h-100">
+                    <h4 class="title-font fw-bold mb-3 text-danger"><i class="fa-solid fa-pen-fancy me-2"></i>أرسل تهنئتك</h4>
                     <form id="wish-form">
                         <div class="mb-3">
-                            <label for="wish-name" class="form-label">الاسم</label>
-                            <input type="text" class="form-control" id="wish-name" placeholder="اكتب اسمك هنا" required>
+                            <label for="wish-name" class="form-label fw-bold">الاسم الكريـم</label>
+                            <input type="text" class="form-control" id="wish-name" placeholder="اكتب اسمك هنا..." required>
                         </div>
                         <div class="mb-3">
-                            <label for="wish-message" class="form-label">التهنئة</label>
-                            <textarea class="form-control" id="wish-message" rows="4" placeholder="اكتب تهنئتك للعروسين..." required></textarea>
+                            <label for="wish-message" class="form-label fw-bold">التهنئة أو الدعوة</label>
+                            <textarea class="form-control" id="wish-message" rows="4" placeholder="ألف مبروك يا عرسان، بيت مال وعيال إن شاء الله..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-gold w-100 py-2 fw-bold">إرسال التهنئة</button>
+                        <button type="submit" class="btn btn-send w-100 fs-5">
+                            <i class="fa-solid fa-paper-plane me-2"></i>إرسال التهاني
+                        </button>
                     </form>
                 </div>
             </div>
 
             <!-- Wishes List Section -->
-            <div class="col-md-7">
-                <div class="card card-custom p-4">
-                    <h3 class="h5 fw-bold mb-3 text-secondary">سجل التهاني</h3>
-                    <div id="wishes-container">
-                        <div class="text-center text-muted py-4">
-                            <div class="spinner-border spinner-border-sm text-secondary me-2" role="status"></div>
-                            جاري جلب التهاني...
+            <div class="col-lg-7">
+                <div class="cute-card p-4 h-100">
+                    <h4 class="title-font fw-bold mb-3 text-danger"><i class="fa-solid fa-comments me-2"></i>دفتر تهاني الأحباب</h4>
+                    <div id="wishes-container" style="max-height: 420px; overflow-y: auto;">
+                        <div class="text-center text-muted py-5">
+                            <div class="spinner-border text-danger mb-2" role="status"></div>
+                            <p class="mb-0">جاري جلب تهاني الأحباب...</p>
                         </div>
                     </div>
                 </div>
@@ -99,12 +249,64 @@
         </div>
     </div>
 
-    <!-- Firebase CDN SDKs (v8 Compatibility) -->
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Firebase CDN SDKs -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // إعدادات Firebase الخاصة بمشروعك
+      // 1. YouTube Player Integration
+      let player;
+      let isPlaying = false;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-player', {
+          height: '1',
+          width: '1',
+          videoId: 'Hgt2V4gmfwA', // رابط أغنية السيرة السودانية المرفقة
+          playerVars: {
+            'autoplay': 0,
+            'controls': 0,
+            'loop': 1,
+            'playlist': 'Hgt2V4gmfwA'
+          },
+          events: {
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      function toggleAudio() {
+        if (!player || typeof player.playVideo !== 'function') return;
+
+        const icon = document.getElementById('play-icon');
+        const text = document.getElementById('play-text');
+        const disc = document.getElementById('music-disc-icon');
+
+        if (isPlaying) {
+          player.pauseVideo();
+          isPlaying = false;
+          icon.className = 'fa-solid fa-play me-2';
+          text.innerText = 'تشغيل الأغنية';
+          disc.classList.remove('fa-spin');
+        } else {
+          player.playVideo();
+          isPlaying = true;
+          icon.className = 'fa-solid fa-pause me-2';
+          text.innerText = 'إيقاف الأغنية';
+          disc.classList.add('fa-spin');
+        }
+      }
+
+      function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+          player.playVideo(); // Repeat loop
+        }
+      }
+
+      // 2. Firebase Database Integration
       const firebaseConfig = {
         apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
         authDomain: "mosab-amna-wedding.firebaseapp.com",
@@ -116,54 +318,44 @@
         measurementId: "G-XDEHJDJXHR"
       };
 
-      // تهيئة الاتصال بقاعدة البيانات
       if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
       }
       const db = firebase.database();
 
-      // 1. دالة جلب التهاني لعرضها تلقائياً
       function loadWishes() {
         const container = document.getElementById('wishes-container');
         if (!container) return;
 
         db.ref('wishes').on('value', (snapshot) => {
-          container.innerHTML = ''; // إزالة عبارة التحميل
+          container.innerHTML = '';
 
           if (snapshot.exists()) {
             const data = snapshot.val();
-            // عرض التهاني مرتبة من الأحدث إلى الأقدم
             Object.values(data).reverse().forEach(wish => {
               container.innerHTML += `
-                <div class="wish-card p-3 my-2 border rounded shadow-sm">
-                  <strong class="d-block text-dark fw-bold">${escapeHtml(wish.name)}</strong>
-                  <p class="mb-0 text-secondary mt-1">${escapeHtml(wish.message)}</p>
+                <div class="wish-bubble p-3 my-2">
+                  <strong class="d-block text-danger fs-6 mb-1"><i class="fa-solid fa-heart me-1 small"></i>${escapeHtml(wish.name)}</strong>
+                  <p class="mb-0 text-dark fs-6">${escapeHtml(wish.message)}</p>
                 </div>
               `;
             });
           } else {
-            container.innerHTML = '<p class="text-center text-muted py-3">لا توجد تهاني حتى الآن، كن أول من يهنئ العروسين!</p>';
+            container.innerHTML = '<p class="text-center text-muted py-4">لا توجد تهاني حتى الآن، كن أول من يهنئ العروسين!</p>';
           }
         }, (error) => {
-          console.error("Firebase Read Error:", error);
-          container.innerHTML = '<p class="text-center text-danger py-3">حدث خطأ أثناء تحميل التهاني، تأكد من إعدادات القواعد (Rules) في Firebase.</p>';
+          console.error(error);
+          container.innerHTML = '<p class="text-center text-danger py-4">حدث خطأ أثناء تحميل التهاني</p>';
         });
       }
 
-      // 2. دالة حماية من الثغرات (XSS Prevention)
       function escapeHtml(str) {
         if (!str) return '';
-        return str.replace(/&/g, "&amp;")
-                  .replace(/</g, "&lt;")
-                  .replace(/>/g, "&gt;")
-                  .replace(/"/g, "&quot;")
-                  .replace(/'/g, "&#039;");
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
       }
 
-      // 3. دالة إرسال التهنئة وحفظها في Firebase
       function submitWish(event) {
         event.preventDefault();
-
         const nameInput = document.getElementById('wish-name');
         const msgInput = document.getElementById('wish-message');
 
@@ -171,7 +363,7 @@
         const message = msgInput.value.trim();
 
         if (!name || !message) {
-          alert('يرجى كتابة الاسم ونص التهنئة أولاً');
+          alert('يرجى ملء كافة الحقول');
           return;
         }
 
@@ -184,19 +376,17 @@
           msgInput.value = '';
           alert('تم إرسال تهنئتك بنجاح!');
         }).catch((err) => {
-          console.error("Firebase Write Error:", err);
-          alert('حدث خطأ أثناء إرسال التهنئة، حاول مرة أخرى.');
+          console.error(err);
+          alert('حدث خطأ أثناء الإرسال');
         });
       }
 
-      // تشغيل الكود فور استكمال تحميل العناصر
       document.addEventListener('DOMContentLoaded', () => {
         loadWishes();
-        const wishForm = document.getElementById('wish-form');
-        if (wishForm) {
-          wishForm.addEventListener('submit', submitWish);
-        }
+        document.getElementById('wish-form').addEventListener('submit', submitWish);
       });
     </script>
 </body>
 </html>
+
+ 
