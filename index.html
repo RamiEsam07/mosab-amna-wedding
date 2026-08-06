@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف فاخرة | مصعب وآمنة</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Arabic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#fef9c3',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                        },
+                        royal: {
+                            950: '#030712',
+                            900: '#0b1329',
+                            800: '#111e3f',
+                            700: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        amiri: ['Amiri', 'serif'],
+                        cairo: ['Cairo', 'sans-serif'],
+                        kufi: ['Reem Kufi', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b1329;
+            color: #f8fafc;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(17, 30, 63, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(250, 204, 21, 0.2);
+        }
+
+        .glow-gold {
+            box-shadow: 0 0 35px rgba(250, 204, 21, 0.15);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen pb-12">
+
+    <!-- Background Decoration Overlay -->
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-royal-800 via-royal-900 to-royal-950 pointer-events-none z-0"></div>
+    <div class="fixed inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] pointer-events-none z-0"></div>
+
+    <!-- Music Toggle Button (Floating) -->
+    <div class="fixed top-5 left-5 z-50">
+        <button id="musicToggle" onclick="toggleAudio()" class="w-12 h-12 rounded-full bg-gold-500/20 border border-gold-400 text-gold-300 flex items-center justify-center backdrop-blur shadow-lg hover:scale-110 transition-all">
+            <i id="musicIcon" class="fa-solid fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Main Wrapper Container -->
+    <main class="relative z-10 max-w-4xl mx-auto px-4 pt-10 sm:pt-16">
+
+        <!-- HEADER / BISMILLAH -->
+        <header class="text-center mb-12 floating">
+            <p class="font-amiri text-2xl sm:text-3xl text-gold-400 mb-3">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            <p class="font-amiri text-lg sm:text-xl text-slate-300 italic max-w-xl mx-auto">
+                "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+            </p>
+            <div class="w-32 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-6"></div>
+        </header>
+
+        <!-- HERO CARD: INVITATION MAIN BOX -->
+        <section class="glass-card rounded-3xl p-8 sm:p-14 text-center glow-gold mb-12 relative overflow-hidden">
+            <span class="inline-block px-4 py-1.5 rounded-full border border-gold-400/30 text-gold-300 text-xs sm:text-sm font-semibold mb-6">
+                دعوة لحضور حفل زفاف
+            </span>
+
+            <h2 class="text-lg sm:text-2xl text-slate-300 font-semibold mb-2">يتشرف العريسان</h2>
+            
+            <!-- COUPLE NAMES -->
+            <div class="py-6 my-4 border-y border-gold-500/20">
+                <h1 class="font-kufi text-4xl sm:text-6xl font-bold gold-gradient-text leading-tight">
+                    مصعـب <span class="text-slate-100 font-light text-3xl sm:text-5xl">&</span> آمنــة
+                </h1>
+            </div>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
+                بدعوتكم لمشاركتنا أجمل لحظات العمر وفرحة انطلاقتنا معاً في ليلة العمر التي تكتمل بوجودكم وحضوركم العطر.
+            </p>
+
+            <!-- WEDDING DATE HIGHLIGHT -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto bg-royal-950/70 p-4 rounded-2xl border border-gold-400/20 text-center mb-8">
+                <div class="p-2">
+                    <span class="block text-xs text-slate-400 mb-1">الـيـوم</span>
+                    <span class="text-lg font-bold text-gold-300">السبت</span>
+                </div>
+                <div class="p-2 sm:border-x border-slate-800">
+                    <span class="block text-xs text-slate-400 mb-1">التاريخ</span>
+                    <span class="text-lg font-bold text-gold-300">28 نوفمبر 2026</span>
+                </div>
+                <div class="p-2">
+                    <span class="block text-xs text-slate-400 mb-1">الوقت</span>
+                    <span class="text-lg font-bold text-gold-300">07:00 مساءً</span>
+                </div>
+            </div>
+
+            <!-- COUNTDOWN TIMER -->
+            <div class="mb-6">
+                <h3 class="text-xs text-gold-400 uppercase tracking-widest mb-4">العد التنازلي لليوم الموعود</h3>
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto" id="countdown">
+                    <div class="bg-royal-900/90 border border-gold-500/30 p-3 rounded-xl">
+                        <span id="days" class="block font-kufi text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="text-xs text-slate-400">يوم</span>
+                    </div>
+                    <div class="bg-royal-900/90 border border-gold-500/30 p-3 rounded-xl">
+                        <span id="hours" class="block font-kufi text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="text-xs text-slate-400">ساعة</span>
+                    </div>
+                    <div class="bg-royal-900/90 border border-gold-500/30 p-3 rounded-xl">
+                        <span id="minutes" class="block font-kufi text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="text-xs text-slate-400">دقيقة</span>
+                    </div>
+                    <div class="bg-royal-900/90 border border-gold-500/30 p-3 rounded-xl">
+                        <span id="seconds" class="block font-kufi text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="text-xs text-slate-400">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID SECTION: LOCATION & SCHEDULE -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            
+            <!-- LOCATION CARD -->
+            <div class="glass-card rounded-3xl p-8 border border-gold-500/20 text-center flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 bg-gold-500/10 text-gold-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 border border-gold-400/30">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-kufi text-2xl font-bold text-gold-300 mb-2">موقع الحفل والقاعة</h3>
+                    <p class="text-white font-bold text-lg mb-1">قاعـة الكورال الفاخرة</p>
+                    <p class="text-slate-400 text-sm mb-6">الخرطوم - شارع النيل</p>
+                </div>
+
+                <div class="space-y-3">
+                    <a href="https://maps.google.com" target="_blank" class="block w-full py-3.5 px-4 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-royal-950 font-bold rounded-xl transition-all shadow-md">
+                        <i class="fa-solid fa-map-location-dot ml-2"></i> فتح خريطة القاعة (Google Maps)
+                    </a>
+                    <button onclick="addToCalendar()" class="block w-full py-3 px-4 bg-royal-900 hover:bg-royal-800 text-slate-200 border border-gold-500/30 rounded-xl text-sm font-semibold transition-all">
+                        <i class="fa-regular fa-calendar-plus ml-2 text-gold-400"></i> إضافة المناسبة للتقويم
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROGRAM TIMELINE -->
+            <div class="glass-card rounded-3xl p-8 border border-gold-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-14 h-14 bg-gold-500/10 text-gold-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 border border-gold-400/30">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-kufi text-2xl font-bold text-gold-300">برنامج الليلة المباركة</h3>
+                </div>
+
+                <div class="space-y-6 relative before:absolute before:right-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-gold-500/30">
+                    <div class="relative right-10">
+                        <div class="absolute -right-10 top-1 w-3.5 h-3.5 rounded-full bg-gold-400 ring-4 ring-royal-900"></div>
+                        <h4 class="font-bold text-white text-base">استقبال الضيوف الكرام</h4>
+                        <p class="text-xs text-gold-400 font-semibold">07:00 مساءً</p>
+                    </div>
+
+                    <div class="relative right-10">
+                        <div class="absolute -right-10 top-1 w-3.5 h-3.5 rounded-full bg-gold-400 ring-4 ring-royal-900"></div>
+                        <h4 class="font-bold text-white text-base">عقد القران والبركة</h4>
+                        <p class="text-xs text-gold-400 font-semibold">08:00 مساءً</p>
+                    </div>
+
+                    <div class="relative right-10">
+                        <div class="absolute -right-10 top-1 w-3.5 h-3.5 rounded-full bg-gold-400 ring-4 ring-royal-900"></div>
+                        <h4 class="font-bold text-white text-base">مأدبة العشاء المباركة</h4>
+                        <p class="text-xs text-gold-400 font-semibold">09:30 مساءً</p>
+                    </div>
+
+                    <div class="relative right-10">
+                        <div class="absolute -right-10 top-1 w-3.5 h-3.5 rounded-full bg-gold-400 ring-4 ring-royal-900"></div>
+                        <h4 class="font-bold text-white text-base">الزفة والختام السعيد</h4>
+                        <p class="text-xs text-gold-400 font-semibold">10:30 مساءً</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RSVP FORM (تأكيد الحضور المربوط بالواتساب) -->
+        <section class="glass-card rounded-3xl p-8 sm:p-12 border border-gold-500/30 text-center mb-12">
+            <div class="max-w-xl mx-auto">
+                <div class="w-14 h-14 bg-gold-500/10 text-gold-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 border border-gold-400/30">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <h3 class="font-kufi text-3xl font-bold text-gold-300 mb-2">تأكيد الحضور (RSVP)</h3>
+                <p class="text-slate-300 text-sm mb-8">يسعدنا تأكيد حضوركم الكريم لترتيب واستقبالكم بأفضل صورة</p>
+
+                <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-4 text-right">
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1.5">الاسم الكريم / العائلة:</label>
+                        <input type="text" id="guestName" required placeholder="أدخل اسمك هنا..." class="w-full bg-royal-950/80 border border-gold-500/30 rounded-xl p-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-gold-400 text-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 mb-1.5">حالة الحضور:</label>
+                            <select id="attendingStatus" class="w-full bg-royal-950/80 border border-gold-500/30 rounded-xl p-3.5 text-white focus:outline-none focus:border-gold-400 text-sm">
+                                <option value="يشرفني الحضور">يشرفني الحضور بكل سرور 🎉</option>
+                                <option value="أعتذر عن الحضور">أعتذر مع أطيب الأمنيات 🤍</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 mb-1.5">عدد المرافقين:</label>
+                            <input type="number" id="guestCount" min="1" max="10" value="1" class="w-full bg-royal-950/80 border border-gold-500/30 rounded-xl p-3.5 text-white focus:outline-none focus:border-gold-400 text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 mb-1.5">تهنئة خاصة للعروسين:</label>
+                        <textarea id="guestMessage" rows="3" placeholder="اكتب مباركتك للعروسين هنا..." class="w-full bg-royal-950/80 border border-gold-500/30 rounded-xl p-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-gold-400 text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold rounded-xl transition-all shadow-lg text-base flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> إرسال تأكيد الحضور إلى الواتساب
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER & POWERED BY ZEROONE -->
+        <footer class="text-center text-slate-500 text-xs py-6 border-t border-slate-800/80">
+            <p class="mb-2">دامت دياركم عامرة بالأفراح والمسرّات 🌿</p>
+            <div class="flex items-center justify-center gap-2 text-slate-400 mt-4">
+                <span>تم تطوير الدعوة بواسطة</span>
+                <span class="font-kufi font-bold text-gold-400">ZeroOne Digital Solutions</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Background Audio Element -->
+    <audio id="weddingAudio" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=arabic-oriental-wedding-music-112248.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Target Wedding Date: Nov 28, 2026
+        const weddingDate = new Date("November 28, 2026 19:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Music Toggle
+        let isPlaying = false;
+        const audio = document.getElementById('weddingAudio');
+        const musicIcon = document.getElementById('musicIcon');
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.className = "fa-solid fa-music";
+            } else {
+                audio.play().catch(e => console.log("Audio autoplay restricted"));
+                musicIcon.className = "fa-solid fa-volume-high text-gold-400 animate-pulse";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Direct WhatsApp RSVP Handler to +249124893391
+        function submitRSVP(e) {
+            e.preventDefault();
+            const targetPhone = "249124893391";
+            const name = document.getElementById('guestName').value;
+            const status = document.getElementById('attendingStatus').value;
+            const count = document.getElementById('guestCount').value;
+            const message = document.getElementById('guestMessage').value;
+
+            const whatsappMessage = `مرحباً مصعب وآمنة 💐\n\nتأكيد حضور حفل الزفاف:\n- الاسم: ${name}\n- الحالة: ${status}\n- عدد المرافقين: ${count}\n- التهنئة: ${message || 'ألف مبروك وبالرفاه والبنين!'}`;
+            
+            const encodedUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(encodedUrl, '_blank');
+        }
+
+        // Add to Google Calendar
+        function addToCalendar() {
+            const title = encodeURIComponent("حفل زفاف مصعب وآمنة 💍");
+            const details = encodeURIComponent("دعوة لحضور حفل زفاف مصعب وآمنة بقاعة الكورال - الخرطوم");
+            const location = encodeURIComponent("قاعة الكورال، شارع النيل، الخرطوم");
+            const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261128T170000Z/20261128T220000Z&details=${details}&location=${location}`;
+            window.open(calendarUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+
