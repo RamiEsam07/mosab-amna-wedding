@@ -13,13 +13,14 @@
     
     <style>
         :root {
-            --bg-pastel: #FFF8F6;
+            --bg-pastel: #FFF9F7;
             --primary-rose: #FF758F;
             --primary-hover: #FF4D6D;
             --soft-pink: #FFCCD5;
             --cream-card: #FFFFFF;
             --text-dark: #2B2D42;
             --gold-accent: #E5A93C;
+            --brand-dark: #1E1E24;
         }
 
         body {
@@ -151,7 +152,6 @@
             transform: scale(1.01);
         }
 
-        /* Hidden YouTube iframe for background/player control */
         #yt-player-container {
             position: absolute;
             width: 1px;
@@ -159,11 +159,75 @@
             opacity: 0;
             pointer-events: none;
         }
+
+        /* ZeroOne Company Footer Section */
+        .company-footer {
+            background: #FFFFFF;
+            border-top: 4px solid var(--soft-pink);
+            border-radius: 35px 35px 0 0;
+            padding: 35px 20px;
+            margin-top: 50px;
+            box-shadow: 0 -10px 30px rgba(255, 117, 143, 0.08);
+        }
+
+        .company-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            text-decoration: none;
+        }
+
+        .company-brand span.zero {
+            color: var(--primary-rose);
+        }
+
+        .social-icon-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            border: 2px solid #F0E6E6;
+            color: var(--text-dark);
+            background-color: #FFF;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon-btn:hover {
+            border-color: var(--primary-rose);
+            color: var(--primary-rose);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(255, 117, 143, 0.2);
+        }
+
+        .contact-cta {
+            background-color: #FFF0F3;
+            color: var(--primary-rose);
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid var(--soft-pink);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta:hover {
+            background-color: var(--primary-rose);
+            color: #FFF;
+            box-shadow: 0 5px 15px rgba(255, 117, 143, 0.3);
+        }
     </style>
 </head>
 <body>
 
-    <!-- Hidden YouTube Player Container -->
+    <!-- Hidden YouTube Player -->
     <div id="yt-player-container">
         <div id="youtube-player"></div>
     </div>
@@ -171,11 +235,11 @@
     <div class="container py-4">
         <!-- Hero Card -->
         <header class="hero-card text-center p-4 p-md-5 my-3">
-            <span class="floating-badge mb-3"><i class="fa-solid fa-heart me-2"></i>دعوة فرح زفاف</span>
+            <span class="floating-badge mb-3"><i class="fa-solid fa-heart me-2"></i>دعوة زفاف عصرية</span>
             <h1 class="title-font display-3 fw-bold text-danger my-2">ألفاهاشم ❤️ دينا</h1>
-            <p class="fs-5 text-muted mb-4">نرحب بكم في يوم فرحتنا والسيرة السعيدة ✨</p>
+            <p class="fs-5 text-muted mb-4">نرحب بكم لمشاركتنا فرحة السيرة والليلة السعيدة ✨</p>
 
-            <!-- Information Grid -->
+            <!-- Location & Time Grid -->
             <div class="row g-3 justify-content-center mt-2">
                 <div class="col-md-5 col-6">
                     <div class="cute-card p-3 p-md-4 text-center h-100">
@@ -249,15 +313,43 @@
         </div>
     </div>
 
-    <!-- YouTube IFrame API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- ZeroOne Digital Solutions Branding Section -->
+    <footer class="company-footer text-center">
+        <div class="container">
+            <p class="text-muted mb-1 small fw-bold">تم تصميم وتطوير هذا الموقع بواسطة</p>
+            <div class="mb-2">
+                <a href="#" class="company-brand title-font">
+                    <span class="zero">Zero</span>One <span class="fs-6 text-muted font-monospace">Digital Solutions</span>
+                </a>
+            </div>
+            <p class="text-muted mb-4 small">تطوير المواقع وتصميم الحلول الرقمية المتكاملة</p>
+            
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" target="_blank" class="social-icon-btn" title="فيسبوك ZeroOne">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="social-icon-btn" title="إنستغرام ZeroOne">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/" target="_blank" class="social-icon-btn" title="واتساب ZeroOne">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
 
-    <!-- Firebase CDN SDKs -->
+            <div>
+                <a href="https://wa.me/" target="_blank" class="contact-cta">
+                    <i class="fa-solid fa-comments me-2"></i>تواصل مع ZeroOne لطلب دعوة زفافك الخاصة!
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- YouTube IFrame API & Firebase -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // 1. YouTube Player Integration
       let player;
       let isPlaying = false;
 
@@ -265,22 +357,14 @@
         player = new YT.Player('youtube-player', {
           height: '1',
           width: '1',
-          videoId: 'Hgt2V4gmfwA', // رابط أغنية السيرة السودانية المرفقة
-          playerVars: {
-            'autoplay': 0,
-            'controls': 0,
-            'loop': 1,
-            'playlist': 'Hgt2V4gmfwA'
-          },
-          events: {
-            'onStateChange': onPlayerStateChange
-          }
+          videoId: 'Hgt2V4gmfwA', // رابط أغنية السيرة السودانية
+          playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': 'Hgt2V4gmfwA' },
+          events: { 'onStateChange': onPlayerStateChange }
         });
       }
 
       function toggleAudio() {
         if (!player || typeof player.playVideo !== 'function') return;
-
         const icon = document.getElementById('play-icon');
         const text = document.getElementById('play-text');
         const disc = document.getElementById('music-disc-icon');
@@ -301,12 +385,9 @@
       }
 
       function onPlayerStateChange(event) {
-        if (event.data === YT.PlayerState.ENDED) {
-          player.playVideo(); // Repeat loop
-        }
+        if (event.data === YT.PlayerState.ENDED) player.playVideo();
       }
 
-      // 2. Firebase Database Integration
       const firebaseConfig = {
         apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
         authDomain: "mosab-amna-wedding.firebaseapp.com",
@@ -318,9 +399,7 @@
         measurementId: "G-XDEHJDJXHR"
       };
 
-      if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-      }
+      if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
       const db = firebase.database();
 
       function loadWishes() {
@@ -329,7 +408,6 @@
 
         db.ref('wishes').on('value', (snapshot) => {
           container.innerHTML = '';
-
           if (snapshot.exists()) {
             const data = snapshot.val();
             Object.values(data).reverse().forEach(wish => {
@@ -344,7 +422,6 @@
             container.innerHTML = '<p class="text-center text-muted py-4">لا توجد تهاني حتى الآن، كن أول من يهنئ العروسين!</p>';
           }
         }, (error) => {
-          console.error(error);
           container.innerHTML = '<p class="text-center text-danger py-4">حدث خطأ أثناء تحميل التهاني</p>';
         });
       }
@@ -358,27 +435,17 @@
         event.preventDefault();
         const nameInput = document.getElementById('wish-name');
         const msgInput = document.getElementById('wish-message');
-
         const name = nameInput.value.trim();
         const message = msgInput.value.trim();
 
-        if (!name || !message) {
-          alert('يرجى ملء كافة الحقول');
-          return;
-        }
+        if (!name || !message) return;
 
-        db.ref('wishes').push({
-          name: name,
-          message: message,
-          timestamp: Date.now()
-        }).then(() => {
-          nameInput.value = '';
-          msgInput.value = '';
-          alert('تم إرسال تهنئتك بنجاح!');
-        }).catch((err) => {
-          console.error(err);
-          alert('حدث خطأ أثناء الإرسال');
-        });
+        db.ref('wishes').push({ name: name, message: message, timestamp: Date.now() })
+          .then(() => {
+            nameInput.value = '';
+            msgInput.value = '';
+            alert('تم إرسال تهنئتك بنجاح!');
+          });
       }
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -389,4 +456,3 @@
 </body>
 </html>
 
- 
