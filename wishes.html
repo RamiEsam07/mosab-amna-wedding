@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحة العرسان الخاصة | ألفاهاشم & دينا 💍✨</title>
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
@@ -19,10 +16,8 @@
             --white-card: #FFFFFF;
             --gold-primary: #C5A059;
             --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA771C 100%);
-            --gold-soft: rgba(197, 160, 89, 0.12);
             --royal-dark: #1E293B;
             --text-dark: #334155;
-            --shadow-soft: 0 10px 30px rgba(197, 160, 89, 0.15);
             --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.04);
         }
 
@@ -31,44 +26,35 @@
             background-color: var(--bg-ivory);
             color: var(--text-dark);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(var(--gold-soft) 1.2px, transparent 1.2px),
-                radial-gradient(var(--gold-soft) 1.2px, var(--bg-ivory) 1.2px);
-            background-size: 36px 36px;
-            background-position: 0 0, 18px 18px;
+            background-image: radial-gradient(rgba(197, 160, 89, 0.15) 1.2px, transparent 1.2px);
+            background-size: 32px 32px;
         }
 
-        /* Password Lock Overlay Screen */
+        /* Lock Screen Modal */
         #lock-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(30, 41, 59, 0.98);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             padding: 20px;
         }
 
         .lock-card {
             background: #FFFFFF;
-            border-radius: 30px;
+            border-radius: 28px;
             border: 2px solid var(--gold-primary);
-            padding: 40px 30px;
-            max-width: 420px;
-            width: 100%;
+            padding: 36px 24px;
+            max-width: 400px; width: 100%;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .font-ruqaa { font-family: 'Aref Ruqaa', serif; }
         .font-kufi { font-family: 'Reem Kufi', sans-serif; }
 
-        .gold-text-metallic {
+        .gold-metallic-text {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -77,7 +63,7 @@
 
         .luxury-card {
             background: var(--white-card);
-            border-radius: 30px;
+            border-radius: 28px;
             border: 1px solid rgba(197, 160, 89, 0.25);
             box-shadow: var(--shadow-card);
         }
@@ -85,70 +71,61 @@
         .countdown-box {
             background: linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%);
             border: 2px solid var(--gold-primary);
-            border-radius: 25px;
+            border-radius: 22px;
             padding: 20px 10px;
-            box-shadow: var(--shadow-soft);
         }
 
         .time-unit {
             background: var(--royal-dark);
             color: #FFFFFF;
-            border-radius: 18px;
-            padding: 12px 10px;
+            border-radius: 16px;
+            padding: 10px;
             border: 1px solid var(--gold-primary);
         }
 
         .time-number {
             font-family: 'Reem Kufi', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            line-height: 1;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .time-label {
-            font-size: 0.8rem;
-            color: #CBD5E1;
-            margin-top: 4px;
-        }
+        .time-label { font-size: 0.75rem; color: #CBD5E1; }
 
+        /* Instagram Live Bubbles Container */
         .insta-feed-container {
-            max-height: 520px;
+            max-height: 500px;
             overflow-y: auto;
             padding: 10px;
             display: flex;
             flex-direction: column-reverse;
-            gap: 14px;
+            gap: 12px;
         }
 
         .insta-bubble {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 24px;
-            border: 1.5px solid rgba(197, 160, 89, 0.3);
-            border-right: 6px solid var(--gold-primary);
-            padding: 16px 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
-            animation: bubbleUp 0.5s ease forwards;
+            border-radius: 20px;
+            border: 1.5px solid rgba(197, 160, 89, 0.25);
+            border-right: 5px solid var(--gold-primary);
+            padding: 14px 18px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+            animation: bubbleUp 0.4s ease forwards;
         }
 
         @keyframes bubbleUp {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(15px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         .avatar-badge {
-            width: 44px;
-            height: 44px;
+            width: 42px; height: 42px;
             background: var(--gold-gradient);
             color: var(--royal-dark);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.1rem;
         }
 
         .btn-back {
@@ -156,89 +133,67 @@
             color: var(--royal-dark);
             border-radius: 50px;
             border: none;
-            padding: 10px 28px;
+            padding: 8px 24px;
             font-weight: 800;
             text-decoration: none;
             display: inline-block;
         }
 
-        .zeroone-footer {
+        .footer-branding {
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.85rem;
+            color: #94A3B8;
             background: var(--royal-dark);
-            color: #FFFFFF;
-            border-top: 4px solid var(--gold-primary);
-            border-radius: 36px 36px 0 0;
-            padding: 40px 20px 28px;
-            margin-top: 60px;
+            border-top: 3px solid var(--gold-primary);
+            margin-top: 40px;
+            border-radius: 28px 28px 0 0;
         }
 
-        .zeroone-title {
-            font-family: 'Reem Kufi', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-        }
-
-        .zeroone-title span.zero {
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .social-circle-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--gold-primary);
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            text-decoration: none;
-        }
+        .footer-branding a { color: var(--gold-primary); text-decoration: none; font-weight: 700; }
     </style>
 </head>
 <body>
 
-    <!-- 🔒 شاشة القفل بكلمة المرور -->
+    <!-- Lock Screen Password Form -->
     <div id="lock-screen">
         <div class="lock-card animate__animated animate__zoomIn">
             <div class="mb-3">
-                <i class="fa-solid fa-lock text-warning display-4"></i>
+                <i class="fa-solid fa-lock text-warning display-5"></i>
             </div>
-            <h3 class="font-kufi gold-text-metallic fw-bold mb-2">صفحة العرسان الخاصة</h3>
-            <p class="text-muted small mb-4">هذه الصفحة خاصة بالعريس والعروس، يرجى إدخال كلمة المرور للمتابعة:</p>
+            <h3 class="font-kufi gold-metallic-text fw-bold mb-2">صفحة العرسان الخاصة</h3>
+            <p class="text-muted small mb-4">يرجى إدخال كلمة المرور لرؤية التبريكات الحية والعداد:</p>
             
             <form onsubmit="unlockPage(event)">
                 <div class="mb-3">
-                    <input type="password" id="passInput" class="form-control form-control-lg text-center rounded-pill border-warning" placeholder="أدخل كلمة المرور..." required autocomplete="off">
+                    <input type="password" id="passInput" class="form-control text-center rounded-pill border-warning" placeholder="أدخل كلمة المرور..." required>
                 </div>
                 <div id="errorMsg" class="text-danger small mb-3 d-none">❌ كلمة المرور غير صحيحة، حاول مجدداً</div>
                 <button type="submit" class="btn btn-warning w-100 rounded-pill py-2 fw-bold text-dark mb-2">
-                    <i class="fa-solid fa-key me-2"></i>دخول للصفحة
+                    <i class="fa-solid fa-key me-2"></i> دخول للصفحة
                 </button>
-                <a href="index.html" class="btn btn-link text-muted text-decoration-none small">العودة للدعوة العامة</a>
+                <a href="index.html" class="btn btn-link text-muted text-decoration-none small">العودة للدعوة الرئيسية</a>
             </form>
         </div>
     </div>
 
-    <!-- 🌐 محتوى الصفحة الأصلي (يظهر بعد الفتح) -->
+    <!-- Main Protected Content -->
     <div id="main-content" style="display: none;">
         <div class="container py-4">
             <header class="text-center my-3">
-                <a href="index.html" class="btn-back mb-3"><i class="fa-solid fa-arrow-right me-2"></i>العودة لصفحة الدعوة</a>
-                <h1 class="font-ruqaa display-3 gold-text-metallic my-2 fw-bold">صفحة العرسان المباشرة</h1>
+                <a href="index.html" class="btn-back mb-3"><i class="fa-solid fa-arrow-right me-2"></i>العودة للدعوة الرئيسية</a>
+                <h1 class="font-ruqaa display-3 gold-metallic-text my-2 fw-bold">صفحة العرسان المباشرة</h1>
                 <p class="fs-5 text-muted font-kufi">ألفاهاشم ❤️ دينا | العداد التنازلي وتبريكات المهنئين الحية</p>
             </header>
 
-            <!-- العداد التنازلي -->
+            <!-- Countdown Timer -->
             <div class="row justify-content-center my-4">
                 <div class="col-lg-8 col-md-10">
                     <div class="countdown-box text-center">
-                        <h5 class="font-kufi gold-text-metallic fw-bold mb-3">
-                            <i class="fa-solid fa-hourglass-half me-2"></i>المتبقي على يوم الزفاف (14 أغسطس)
+                        <h5 class="font-kufi gold-metallic-text fw-bold mb-3">
+                            <i class="fa-solid fa-hourglass-half me-2"></i>المتبقي على يوم الزفاف (14 أغسطس 2026)
                         </h5>
-                        <div class="row g-2 justify-content-center" id="countdown-timer">
+                        <div class="row g-2 justify-content-center">
                             <div class="col-3"><div class="time-unit"><div class="time-number" id="days">00</div><div class="time-label">أيام</div></div></div>
                             <div class="col-3"><div class="time-unit"><div class="time-number" id="hours">00</div><div class="time-label">ساعات</div></div></div>
                             <div class="col-3"><div class="time-unit"><div class="time-number" id="minutes">00</div><div class="time-label">دقائق</div></div></div>
@@ -248,12 +203,12 @@
                 </div>
             </div>
 
-            <!-- الفقاعات المباشرة -->
+            <!-- Instagram Live Style Wishes Feed -->
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="luxury-card p-4 p-md-5">
-                        <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
-                            <h4 class="font-kufi fw-bold gold-text-metallic mb-0">
+                    <div class="luxury-card p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-3">
+                            <h4 class="font-kufi fw-bold gold-metallic-text mb-0">
                                 <i class="fa-brands fa-instagram me-2"></i>فقاعات التبريكات المباشرة
                             </h4>
                             <span class="badge rounded-pill bg-danger px-3 py-2">🔴 بث حي مباشر</span>
@@ -269,33 +224,18 @@
             </div>
         </div>
 
-        <!-- 🏢 فوتر ZeroOne Digital Solutions التوثيقي -->
-        <footer class="zeroone-footer text-center">
-            <div class="container">
-                <p class="text-light mb-1 small fw-bold opacity-75">تم تنفيذ وتطوير الموقع بواسطة</p>
-                <div class="mb-2">
-                    <a href="https://wa.me/249124893391" target="_blank" class="zeroone-title text-decoration-none text-white">
-                        <span class="zero">ZeroOne</span> Digital Solutions
-                    </a>
-                </div>
-                <p class="text-light mb-4 small opacity-75">حلول برمجية متكاملة | تصميم دعوات ومواقع إلكترونية عصرية</p>
-
-                <div class="d-flex justify-content-center gap-3 mb-4">
-                    <a href="https://wa.me/249124893391" target="_blank" class="social-circle-btn"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://facebook.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
+        <!-- Footer -->
+        <footer class="footer-branding">
+            <p class="mb-1">Made with ❤️ by <a href="https://wa.me/249124893391" target="_blank">ZeroOne Digital Solutions</a></p>
         </footer>
     </div>
 
-    <!-- Firebase Scripts -->
+    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // 1. Password Lock Handler
-      const MY_PASSWORD = "1408"; // 🔑 كلمة المرور الخاصة بالصفحة
+      const MY_PASSWORD = "1234"; // 🔑 كلمة المرور الافتراضية
 
       function unlockPage(e) {
         e.preventDefault();
@@ -310,24 +250,19 @@
         }
       }
 
-      // 2. Countdown Timer
       function startCountdown() {
-        const currentYear = new Date().getFullYear();
-        let targetDate = new Date(`August 14, ${currentYear} 20:00:00`).getTime();
-        if (new Date().getTime() > targetDate) targetDate = new Date(`August 14, ${currentYear + 1} 20:00:00`).getTime();
-
+        const target = new Date("2026-08-14T20:00:00").getTime();
         setInterval(() => {
-            const difference = targetDate - new Date().getTime();
-            if (difference > 0) {
-                document.getElementById('days').innerText = String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, '0');
-                document.getElementById('hours').innerText = String(Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(Math.floor((difference % (1000 * 60)) / 1000)).padStart(2, '0');
+            const diff = target - new Date().getTime();
+            if (diff > 0) {
+                document.getElementById('days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                document.getElementById('hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
             }
         }, 1000);
       }
 
-      // 3. Firebase Wishes Sync
       const firebaseConfig = {
         apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
         authDomain: "mosab-amna-wedding.firebaseapp.com",
@@ -353,7 +288,7 @@
                   <div class="avatar-badge flex-shrink-0">${firstLetter}</div>
                   <div class="flex-grow-1">
                     <div class="d-flex align-items-center justify-content-between mb-1">
-                      <strong class="gold-text-metallic fs-6 font-kufi">${escapeHtml(wish.name)} <i class="fa-solid fa-crown text-warning ms-1 small"></i></strong>
+                      <strong class="gold-metallic-text fs-6 font-kufi">${escapeHtml(wish.name)} <i class="fa-solid fa-crown text-warning ms-1 small"></i></strong>
                       <span class="badge bg-light text-dark rounded-pill border small"><i class="fa-regular fa-heart text-danger me-1"></i>تهنئة</span>
                     </div>
                     <p class="mb-0 text-dark fs-6">${escapeHtml(wish.message)}</p>
@@ -373,3 +308,4 @@
     </script>
 </body>
 </html>
+
