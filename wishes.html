@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة العرسان | ألفاهاشم & دينا 💍✨</title>
+    <title>صفحة العرسان الخاصة | ألفاهاشم & دينا 💍✨</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -38,6 +38,33 @@
             background-position: 0 0, 18px 18px;
         }
 
+        /* Password Lock Overlay Screen */
+        #lock-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 41, 59, 0.98);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lock-card {
+            background: #FFFFFF;
+            border-radius: 30px;
+            border: 2px solid var(--gold-primary);
+            padding: 40px 30px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
         .font-ruqaa { font-family: 'Aref Ruqaa', serif; }
         .font-kufi { font-family: 'Reem Kufi', sans-serif; }
 
@@ -55,7 +82,6 @@
             box-shadow: var(--shadow-card);
         }
 
-        /* Countdown Timer Styling */
         .countdown-box {
             background: linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%);
             border: 2px solid var(--gold-primary);
@@ -70,7 +96,6 @@
             border-radius: 18px;
             padding: 12px 10px;
             border: 1px solid var(--gold-primary);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .time-number {
@@ -89,47 +114,28 @@
             margin-top: 4px;
         }
 
-        /* Instagram Live Bubble Feed */
         .insta-feed-container {
             max-height: 520px;
             overflow-y: auto;
             padding: 10px;
             display: flex;
-            flex-direction: column-reverse; /* Newest appears gracefully */
+            flex-direction: column-reverse;
             gap: 14px;
-            scroll-behavior: smooth;
         }
 
-        .insta-feed-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        .insta-feed-container::-webkit-scrollbar-thumb {
-            background: var(--gold-primary);
-            border-radius: 10px;
-        }
-
-        /* Instagram Bubble Card */
         .insta-bubble {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
             border-radius: 24px;
             border: 1.5px solid rgba(197, 160, 89, 0.3);
             border-right: 6px solid var(--gold-primary);
             padding: 16px 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
-            animation: bubbleUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            position: relative;
+            animation: bubbleUp 0.5s ease forwards;
         }
 
         @keyframes bubbleUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .avatar-badge {
@@ -143,7 +149,6 @@
             justify-content: center;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
         }
 
         .btn-back {
@@ -155,17 +160,8 @@
             font-weight: 800;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-            transition: all 0.3s ease;
         }
 
-        .btn-back:hover {
-            transform: translateY(-2px);
-            color: var(--royal-dark);
-            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
-        }
-
-        /* ZeroOne Digital Solutions Footer */
         .zeroone-footer {
             background: var(--royal-dark);
             color: #FFFFFF;
@@ -179,7 +175,6 @@
             font-family: 'Reem Kufi', sans-serif;
             font-size: 2rem;
             font-weight: 800;
-            letter-spacing: 1.2px;
         }
 
         .zeroone-title span.zero {
@@ -200,152 +195,139 @@
             justify-content: center;
             font-size: 1.3rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-circle-btn:hover {
-            background: var(--gold-gradient);
-            color: var(--royal-dark);
-            transform: translateY(-4px);
         }
     </style>
 </head>
 <body>
 
-    <div class="container py-4">
-        <!-- Header Section -->
-        <header class="text-center my-3 animate__animated animate__fadeIn">
-            <a href="index.html" class="btn-back mb-3"><i class="fa-solid fa-arrow-right me-2"></i>العودة لصفحة الدعوة</a>
+    <!-- 🔒 شاشة القفل بكلمة المرور -->
+    <div id="lock-screen">
+        <div class="lock-card animate__animated animate__zoomIn">
+            <div class="mb-3">
+                <i class="fa-solid fa-lock text-warning display-4"></i>
+            </div>
+            <h3 class="font-kufi gold-text-metallic fw-bold mb-2">صفحة العرسان الخاصة</h3>
+            <p class="text-muted small mb-4">هذه الصفحة خاصة بالعريس والعروس، يرجى إدخال كلمة المرور للمتابعة:</p>
             
-            <h1 class="font-ruqaa display-3 gold-text-metallic my-2 fw-bold">صفحة العرسان المباشرة</h1>
-            <p class="fs-5 text-muted font-kufi">ألفاهاشم ❤️ دينا | العداد التنازلي وتبريكات المهنئين الحية</p>
-        </header>
-
-        <!-- Countdown Timer Section -->
-        <div class="row justify-content-center my-4">
-            <div class="col-lg-8 col-md-10">
-                <div class="countdown-box text-center">
-                    <h5 class="font-kufi gold-text-metallic fw-bold mb-3">
-                        <i class="fa-solid fa-hourglass-half me-2"></i>المتبقي على يوم الزفاف (14 أغسطس)
-                    </h5>
-                    <div class="row g-2 justify-content-center" id="countdown-timer">
-                        <div class="col-3">
-                            <div class="time-unit">
-                                <div class="time-number" id="days">00</div>
-                                <div class="time-label">أيام</div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="time-unit">
-                                <div class="time-number" id="hours">00</div>
-                                <div class="time-label">ساعات</div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="time-unit">
-                                <div class="time-number" id="minutes">00</div>
-                                <div class="time-label">دقائق</div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="time-unit">
-                                <div class="time-number" id="seconds">00</div>
-                                <div class="time-label">ثواني</div>
-                            </div>
-                        </div>
-                    </div>
+            <form onsubmit="unlockPage(event)">
+                <div class="mb-3">
+                    <input type="password" id="passInput" class="form-control form-control-lg text-center rounded-pill border-warning" placeholder="أدخل كلمة المرور..." required autocomplete="off">
                 </div>
-            </div>
-        </div>
-
-        <!-- Live Instagram Style Bubbles Section -->
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="luxury-card p-4 p-md-5">
-                    <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
-                        <h4 class="font-kufi fw-bold gold-text-metallic mb-0">
-                            <i class="fa-brands fa-instagram me-2"></i>فقاعات التبريكات المباشرة
-                        </h4>
-                        <span class="badge rounded-pill bg-danger px-3 py-2 animate__animated animate__pulse animate__infinite">
-                            🔴 بث حي مباشر
-                        </span>
-                    </div>
-
-                    <!-- Instagram Bubbles Feed Container -->
-                    <div id="wishes-container" class="insta-feed-container">
-                        <div class="text-center text-muted py-5">
-                            <div class="spinner-border text-warning mb-2" role="status"></div>
-                            <p class="mb-0">جاري الاتصال بالبث المباشر للتبريكات...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div id="errorMsg" class="text-danger small mb-3 d-none">❌ كلمة المرور غير صحيحة، حاول مجدداً</div>
+                <button type="submit" class="btn btn-warning w-100 rounded-pill py-2 fw-bold text-dark mb-2">
+                    <i class="fa-solid fa-key me-2"></i>دخول للصفحة
+                </button>
+                <a href="index.html" class="btn btn-link text-muted text-decoration-none small">العودة للدعوة العامة</a>
+            </form>
         </div>
     </div>
 
-    <!-- ZeroOne Digital Solutions Company Footer Section -->
-    <footer class="zeroone-footer text-center">
-        <div class="container">
-            <p class="text-light mb-1 small fw-bold opacity-75">تم تنفيذ وتطوير الموقع بواسطة</p>
-            <div class="mb-2">
-                <a href="https://wa.me/249929872418" target="_blank" class="zeroone-title text-decoration-none text-white">
-                    <span class="zero">ZeroOne</span> Digital Solutions
-                </a>
-            </div>
-            <p class="text-light mb-4 small opacity-75">حلول برمجية متكاملة | تصميم دعوات ومواقع إلكترونية عصرية</p>
+    <!-- 🌐 محتوى الصفحة الأصلي (يظهر بعد الفتح) -->
+    <div id="main-content" style="display: none;">
+        <div class="container py-4">
+            <header class="text-center my-3">
+                <a href="index.html" class="btn-back mb-3"><i class="fa-solid fa-arrow-right me-2"></i>العودة لصفحة الدعوة</a>
+                <h1 class="font-ruqaa display-3 gold-text-metallic my-2 fw-bold">صفحة العرسان المباشرة</h1>
+                <p class="fs-5 text-muted font-kufi">ألفاهاشم ❤️ دينا | العداد التنازلي وتبريكات المهنئين الحية</p>
+            </header>
 
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <a href="https://facebook.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/249929872418" target="_blank" class="social-circle-btn"><i class="fa-brands fa-whatsapp"></i></a>
+            <!-- العداد التنازلي -->
+            <div class="row justify-content-center my-4">
+                <div class="col-lg-8 col-md-10">
+                    <div class="countdown-box text-center">
+                        <h5 class="font-kufi gold-text-metallic fw-bold mb-3">
+                            <i class="fa-solid fa-hourglass-half me-2"></i>المتبقي على يوم الزفاف (14 أغسطس)
+                        </h5>
+                        <div class="row g-2 justify-content-center" id="countdown-timer">
+                            <div class="col-3"><div class="time-unit"><div class="time-number" id="days">00</div><div class="time-label">أيام</div></div></div>
+                            <div class="col-3"><div class="time-unit"><div class="time-number" id="hours">00</div><div class="time-label">ساعات</div></div></div>
+                            <div class="col-3"><div class="time-unit"><div class="time-number" id="minutes">00</div><div class="time-label">دقائق</div></div></div>
+                            <div class="col-3"><div class="time-unit"><div class="time-number" id="seconds">00</div><div class="time-label">ثواني</div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفقاعات المباشرة -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="luxury-card p-4 p-md-5">
+                        <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+                            <h4 class="font-kufi fw-bold gold-text-metallic mb-0">
+                                <i class="fa-brands fa-instagram me-2"></i>فقاعات التبريكات المباشرة
+                            </h4>
+                            <span class="badge rounded-pill bg-danger px-3 py-2">🔴 بث حي مباشر</span>
+                        </div>
+                        <div id="wishes-container" class="insta-feed-container">
+                            <div class="text-center text-muted py-5">
+                                <div class="spinner-border text-warning mb-2" role="status"></div>
+                                <p class="mb-0">جاري الاتصال بالبث المباشر للتبريكات...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Firebase SDKs -->
+        <!-- 🏢 فوتر ZeroOne Digital Solutions التوثيقي -->
+        <footer class="zeroone-footer text-center">
+            <div class="container">
+                <p class="text-light mb-1 small fw-bold opacity-75">تم تنفيذ وتطوير الموقع بواسطة</p>
+                <div class="mb-2">
+                    <a href="https://wa.me/249124893391" target="_blank" class="zeroone-title text-decoration-none text-white">
+                        <span class="zero">ZeroOne</span> Digital Solutions
+                    </a>
+                </div>
+                <p class="text-light mb-4 small opacity-75">حلول برمجية متكاملة | تصميم دعوات ومواقع إلكترونية عصرية</p>
+
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <a href="https://wa.me/249124893391" target="_blank" class="social-circle-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // 1. Live Wedding Countdown Script (14 August)
-      function startCountdown() {
-        const currentYear = new Date().getFullYear();
-        // Target Date: August 14th
-        let targetDate = new Date(`August 14, ${currentYear} 20:00:00`).getTime();
-        
-        // If the date has already passed for this year, target next year
-        if (new Date().getTime() > targetDate) {
-            targetDate = new Date(`August 14, ${currentYear + 1} 20:00:00`).getTime();
+      // 1. Password Lock Handler
+      const MY_PASSWORD = "1408"; // 🔑 كلمة المرور الخاصة بالصفحة
+
+      function unlockPage(e) {
+        e.preventDefault();
+        const entered = document.getElementById('passInput').value;
+        if (entered === MY_PASSWORD) {
+            document.getElementById('lock-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            startCountdown();
+            loadWishes();
+        } else {
+            document.getElementById('errorMsg').classList.remove('d-none');
         }
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-            } else {
-                document.getElementById('countdown-timer').innerHTML = `
-                    <div class="col-12 py-2">
-                        <h4 class="gold-text-metallic fw-bold">🎉 اليوم يوم الفرح والسرور! ألف مبروك للعروسين 🎉</h4>
-                    </div>
-                `;
-            }
-        }
-
-        updateTimer();
-        setInterval(updateTimer, 1000);
       }
 
-      // 2. Firebase Database Integration & Instagram Bubble Rendering
+      // 2. Countdown Timer
+      function startCountdown() {
+        const currentYear = new Date().getFullYear();
+        let targetDate = new Date(`August 14, ${currentYear} 20:00:00`).getTime();
+        if (new Date().getTime() > targetDate) targetDate = new Date(`August 14, ${currentYear + 1} 20:00:00`).getTime();
+
+        setInterval(() => {
+            const difference = targetDate - new Date().getTime();
+            if (difference > 0) {
+                document.getElementById('days').innerText = String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                document.getElementById('hours').innerText = String(Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(Math.floor((difference % (1000 * 60)) / 1000)).padStart(2, '0');
+            }
+        }, 1000);
+      }
+
+      // 3. Firebase Wishes Sync
       const firebaseConfig = {
         apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
         authDomain: "mosab-amna-wedding.firebaseapp.com",
@@ -353,8 +335,7 @@
         projectId: "mosab-amna-wedding",
         storageBucket: "mosab-amna-wedding.firebasestorage.app",
         messagingSenderId: "579615543308",
-        appId: "1:579615543308:web:3a975c4c9c986407b09e29",
-        measurementId: "G-XDEHJDJXHR"
+        appId: "1:579615543308:web:3a975c4c9c986407b09e29"
       };
 
       if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
@@ -362,54 +343,33 @@
 
       function loadWishes() {
         const container = document.getElementById('wishes-container');
-        if (!container) return;
-
         db.ref('wishes').on('value', (snapshot) => {
           container.innerHTML = '';
-
           if (snapshot.exists()) {
-            const data = snapshot.val();
-            // Sort messages to render as live floating bubbles
-            Object.values(data).forEach(wish => {
+            Object.values(snapshot.val()).forEach(wish => {
               const firstLetter = wish.name ? wish.name.trim().charAt(0).toUpperCase() : '💍';
               container.innerHTML += `
                 <div class="insta-bubble d-flex align-items-start gap-3">
-                  <div class="avatar-badge flex-shrink-0">
-                    ${firstLetter}
-                  </div>
+                  <div class="avatar-badge flex-shrink-0">${firstLetter}</div>
                   <div class="flex-grow-1">
                     <div class="d-flex align-items-center justify-content-between mb-1">
-                      <strong class="gold-text-metallic fs-6 font-kufi">
-                        ${escapeHtml(wish.name)} <i class="fa-solid fa-crown text-warning ms-1 small"></i>
-                      </strong>
-                      <span class="badge bg-light text-dark rounded-pill border small">
-                        <i class="fa-regular fa-heart text-danger me-1"></i>تهنئة
-                      </span>
+                      <strong class="gold-text-metallic fs-6 font-kufi">${escapeHtml(wish.name)} <i class="fa-solid fa-crown text-warning ms-1 small"></i></strong>
+                      <span class="badge bg-light text-dark rounded-pill border small"><i class="fa-regular fa-heart text-danger me-1"></i>تهنئة</span>
                     </div>
-                    <p class="mb-0 text-dark fs-6 font-cairo">${escapeHtml(wish.message)}</p>
+                    <p class="mb-0 text-dark fs-6">${escapeHtml(wish.message)}</p>
                   </div>
                 </div>
               `;
             });
           } else {
-            container.innerHTML = '<p class="text-center text-muted py-5 fs-6">لا توجد فقاعات تبريكات حالياً، كن أول المهنئين من صفحة الدعوة!</p>';
+            container.innerHTML = '<p class="text-center text-muted py-5">لا توجد مباركات حالياً، كن أول المهنئين!</p>';
           }
-        }, (error) => {
-          console.error(error);
-          container.innerHTML = '<p class="text-center text-danger py-5">حدث خطأ أثناء تحميل التبريكات المباشرة</p>';
         });
       }
 
       function escapeHtml(str) {
-        if (!str) return '';
-        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        return str ? str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;") : '';
       }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        startCountdown();
-        loadWishes();
-      });
     </script>
 </body>
 </html>
-
