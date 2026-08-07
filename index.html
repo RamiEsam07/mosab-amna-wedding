@@ -82,12 +82,48 @@
             font-weight: 700;
             background: transparent;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .btn-outline-gold:hover {
             background: var(--gold-gradient);
             border-color: transparent;
             color: var(--royal-dark);
+        }
+
+        /* Audio Music Bar */
+        .luxury-player {
+            background: var(--royal-dark);
+            color: #FFFFFF;
+            border-radius: 30px;
+            padding: 14px 28px;
+            border: 2px solid var(--gold-primary);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-gold-play {
+            background: var(--gold-gradient);
+            color: var(--royal-dark);
+            border-radius: 50px;
+            border: none;
+            padding: 10px 26px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold-play:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+            color: var(--royal-dark);
+        }
+
+        /* Hidden YouTube iframe */
+        #yt-player-container {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
         }
 
         /* Footer Section Styling */
@@ -136,6 +172,11 @@
 </head>
 <body>
 
+    <!-- Hidden YouTube Player for Background Audio -->
+    <div id="yt-player-container">
+        <div id="youtube-player"></div>
+    </div>
+
     <div class="container py-4">
         <!-- Top Navigation / Couple Page Access -->
         <div class="d-flex justify-content-end mb-3">
@@ -162,17 +203,35 @@
             <!-- Wedding Details Section -->
             <div class="row justify-content-center my-4 g-3">
                 <div class="col-md-5">
-                    <div class="p-3 border rounded-4 bg-light">
+                    <div class="p-3 border rounded-4 bg-light h-100">
                         <i class="fa-regular fa-calendar-check text-warning fs-3 mb-2"></i>
                         <h5 class="font-kufi fw-bold">التاريخ</h5>
-                        <p class="mb-0 text-muted">الخميس، 14 أغسطس 2026م</p>
+                        <p class="mb-0 text-muted fs-5 fw-bold">14 / 8</p>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="p-3 border rounded-4 bg-light">
+                    <div class="p-3 border rounded-4 bg-light h-100">
                         <i class="fa-solid fa-location-dot text-warning fs-3 mb-2"></i>
                         <h5 class="font-kufi fw-bold">المكان</h5>
-                        <p class="mb-0 text-muted">قاعة الأفراح الكبرى - الخرطوم</p>
+                        <p class="mb-0 text-muted fw-bold">في منزلهم خلف معسكر الاحتياطي المركزي - الكلاكلة</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music Player -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <div class="luxury-player d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div class="d-flex align-items-center">
+                            <i id="music-disc-icon" class="fa-solid fa-compact-disc fs-2 text-warning me-3"></i>
+                            <div class="text-start">
+                                <span class="d-block font-kufi gold-text-metallic fw-bold fs-5">🎵 سيرة سودانية</span>
+                                <span class="small text-light">استمع للأغنية أثناء التصفح والمباركة</span>
+                            </div>
+                        </div>
+                        <button id="play-btn" onclick="toggleAudio()" class="btn-gold-play shadow">
+                            <i id="play-icon" class="fa-solid fa-play me-2"></i><span id="play-text">تشغيل الأغنية</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -230,12 +289,60 @@
         </div>
     </footer>
 
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // Firebase Configuration
+      // 1. YouTube Player Integration
+      let player;
+      let isPlaying = false;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-player', {
+          height: '1',
+          width: '1',
+          videoId: 'Gi59P2PuTts',
+          playerVars: { 
+            'autoplay': 0, 
+            'controls': 0, 
+            'loop': 1, 
+            'playlist': 'Gi59P2PuTts' 
+          },
+          events: { 'onStateChange': onPlayerStateChange }
+        });
+      }
+
+      function toggleAudio() {
+        if (!player || typeof player.playVideo !== 'function') return;
+
+        const icon = document.getElementById('play-icon');
+        const text = document.getElementById('play-text');
+        const disc = document.getElementById('music-disc-icon');
+
+        if (isPlaying) {
+          player.pauseVideo();
+          isPlaying = false;
+          icon.className = 'fa-solid fa-play me-2';
+          text.innerText = 'تشغيل الأغنية';
+          disc.classList.remove('fa-spin');
+        } else {
+          player.playVideo();
+          isPlaying = true;
+          icon.className = 'fa-solid fa-pause me-2';
+          text.innerText = 'إيقاف الأغنية';
+          disc.classList.add('fa-spin');
+        }
+      }
+
+      function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) player.playVideo();
+      }
+
+      // 2. Firebase Configuration
       const firebaseConfig = {
         apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
         authDomain: "mosab-amna-wedding.firebaseapp.com",
@@ -277,3 +384,4 @@
     </script>
 </body>
 </html>
+
