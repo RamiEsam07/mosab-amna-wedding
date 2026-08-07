@@ -2,385 +2,553 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة زفاف | ألفاهاشم & دينا 💍✨</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#C5A059">
+    
+    <!-- SEO & Social Sharing Metadata -->
+    <title>دعوة زفاف ألفاهاشم & دينا 💍✨</title>
+    <meta name="description" content="يسعدنا دعوتكم لمشاركتنا فرحتنا في ليلة العمر. ألفاهاشم & دينا">
+    <meta property="og:title" content="دعوة زفاف ألفاهاشم & دينا 💍✨">
+    <meta property="og:description" content="بكل الحب والفرح، نتشرف بمشاركتكم أجمل لحظات حياتنا.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Fonts & Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --bg-ivory: #FDFBF7;
-            --white-card: #FFFFFF;
-            --gold-primary: #C5A059;
-            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA771C 100%);
-            --gold-soft: rgba(197, 160, 89, 0.12);
-            --royal-dark: #1E293B;
-            --text-dark: #334155;
-            --shadow-soft: 0 10px 30px rgba(197, 160, 89, 0.15);
-            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.04);
+            --bg-primary: #FDFBF7;
+            --card-bg: #FFFFFF;
+            --primary-color: #C5A059;
+            --primary-hover: #A3803C;
+            --secondary-color: #1E293B;
+            --accent-color: #D4AF37;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border-color: rgba(197, 160, 89, 0.25);
+            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            --shadow-soft: 0 10px 30px rgba(197, 160, 89, 0.12);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.03);
+            --radius-large: 28px;
+            --radius-medium: 18px;
         }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-ivory);
-            color: var(--text-dark);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(var(--gold-soft) 1.2px, transparent 1.2px),
-                radial-gradient(var(--gold-soft) 1.2px, var(--bg-ivory) 1.2px);
-            background-size: 36px 36px;
-            background-position: 0 0, 18px 18px;
+            -webkit-tap-highlight-color: transparent;
+            background-image: radial-gradient(var(--border-color) 1.2px, transparent 1.2px);
+            background-size: 32px 32px;
         }
 
         .font-ruqaa { font-family: 'Aref Ruqaa', serif; }
         .font-kufi { font-family: 'Reem Kufi', sans-serif; }
 
-        .gold-text-metallic {
+        .gold-metallic-text {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
 
-        .luxury-card {
-            background: var(--white-card);
-            border-radius: 30px;
-            border: 1px solid rgba(197, 160, 89, 0.25);
-            box-shadow: var(--shadow-card);
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Header Access */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px 0 0;
+        }
+
+        .btn-couple-link {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 1px solid var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-couple-link:hover {
+            background: var(--primary-color);
+            color: #FFF;
+        }
+
+        /* Hero Section */
+        .hero-wrapper {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px 0 40px;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-soft);
+            padding: 50px 24px;
+            width: 100%;
             position: relative;
             overflow: hidden;
         }
 
-        .btn-gold {
+        .badge-tag {
+            background: rgba(197, 160, 89, 0.12);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary-custom {
             background: var(--gold-gradient);
-            color: var(--royal-dark);
+            color: var(--secondary-color);
             font-weight: 800;
+            font-size: 1.1rem;
             border: none;
             border-radius: 50px;
-            padding: 12px 30px;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
-            color: var(--royal-dark);
-        }
-
-        .btn-outline-gold {
-            border: 2px solid var(--gold-primary);
-            color: var(--royal-dark);
-            border-radius: 50px;
-            padding: 10px 25px;
-            font-weight: 700;
-            background: transparent;
-            transition: all 0.3s ease;
+            padding: 14px 36px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
+            transition: transform 0.2s ease;
             text-decoration: none;
         }
 
-        .btn-outline-gold:hover {
-            background: var(--gold-gradient);
-            border-color: transparent;
-            color: var(--royal-dark);
-        }
+        .btn-primary-custom:hover { transform: translateY(-2px); }
 
-        /* Audio Music Bar */
-        .luxury-player {
-            background: var(--royal-dark);
-            color: #FFFFFF;
-            border-radius: 30px;
-            padding: 14px 28px;
-            border: 2px solid var(--gold-primary);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .btn-gold-play {
-            background: var(--gold-gradient);
-            color: var(--royal-dark);
+        .btn-secondary-custom {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            font-weight: 700;
             border-radius: 50px;
-            border: none;
-            padding: 10px 26px;
-            font-weight: 800;
-            transition: all 0.3s ease;
+            padding: 12px 28px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
 
-        .btn-gold-play:hover {
-            transform: scale(1.04);
-            box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
-            color: var(--royal-dark);
+        .btn-secondary-custom:hover { background: var(--primary-color); color: #FFF; }
+
+        .section-padding { padding: 30px 0; }
+
+        .card-custom {
+            background: var(--card-bg);
+            border-radius: var(--radius-large);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-card);
+            padding: 32px 24px;
+            margin-bottom: 24px;
         }
 
-        /* Hidden YouTube iframe */
-        #yt-player-container {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Footer Section Styling */
-        .zeroone-footer {
-            background: var(--royal-dark);
-            color: #FFFFFF;
-            border-top: 4px solid var(--gold-primary);
-            border-radius: 36px 36px 0 0;
-            padding: 40px 20px 28px;
-            margin-top: 60px;
-        }
-
-        .zeroone-title {
+        .section-title {
             font-family: 'Reem Kufi', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .time-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-medium);
+            padding: 14px 6px;
+            text-align: center;
+        }
+
+        .time-val {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 1.7rem;
             font-weight: 800;
+            color: var(--secondary-color);
+            line-height: 1;
         }
 
-        .zeroone-title span.zero {
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .time-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
 
-        .social-circle-btn {
-            width: 48px;
-            height: 48px;
+        .couple-img-wrapper {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--gold-primary);
-            color: #FFFFFF;
+            margin: 0 auto 16px;
+            border: 4px solid var(--primary-color);
+            padding: 4px;
+            overflow: hidden;
+        }
+
+        .couple-img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+        .quote-box {
+            font-style: italic;
+            background: rgba(197, 160, 89, 0.08);
+            border-right: 4px solid var(--primary-color);
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .details-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-medium);
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Floating Music Button */
+        .floating-music-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 999;
         }
 
-        .social-circle-btn:hover {
-            background: var(--gold-gradient);
-            color: var(--royal-dark);
-            transform: translateY(-3px);
+        .floating-music-btn.playing { animation: spinDisc 4s linear infinite; }
+        @keyframes spinDisc { 100% { transform: rotate(360deg); } }
+
+        .form-group { margin-bottom: 16px; text-align: right; }
+        .form-label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.9rem; }
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-medium);
+            border: 2px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
         }
+
+        .qr-wrapper {
+            padding: 16px;
+            background: #FFF;
+            border-radius: var(--radius-medium);
+            display: inline-block;
+            border: 1px solid var(--border-color);
+            margin-bottom: 14px;
+        }
+
+        .qr-wrapper canvas, .qr-wrapper img { max-width: 150px; height: auto; margin: 0 auto; }
+
+        .footer-branding {
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+
+        .footer-branding a { color: var(--primary-color); text-decoration: none; font-weight: 700; }
+
+        #yt-hidden-player { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
     </style>
 </head>
 <body>
 
-    <!-- Hidden YouTube Player for Background Audio -->
-    <div id="yt-player-container">
-        <div id="youtube-player"></div>
+    <div id="yt-hidden-player"><div id="yt-player-element"></div></div>
+
+    <button id="musicToggleBtn" class="floating-music-btn" aria-label="تشغيل الموسيقى" onclick="toggleAudioState()">
+        <i id="musicIcon" class="fa-solid fa-music"></i>
+    </button>
+
+    <div class="container">
+        <!-- Top Nav Link to Couples Page -->
+        <div class="top-nav">
+            <a href="wishes.html" class="btn-couple-link"><i class="fa-solid fa-lock me-1"></i> صفحة العرسان الخاصة</a>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-wrapper" id="hero">
+            <div class="hero-card animate__animated animate__fadeIn">
+                <span class="badge-tag">دعوة زفاف</span>
+                <h1 class="font-ruqaa gold-metallic-text display-2 my-2">ألفاهاشم & دينا</h1>
+                <p class="font-kufi fs-5 text-muted my-3">بكل الحب والفرح، نتشرف بمشاركتكم أجمل لحظات حياتنا.</p>
+                <div class="mt-4">
+                    <a href="#countdown" class="btn-primary-custom">
+                        <i class="fa-regular fa-envelope-open me-2"></i> فتح الدعوة
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown -->
+        <section class="section-padding" id="countdown">
+            <div class="card-custom text-center">
+                <h2 class="section-title"><i class="fa-solid fa-hourglass-half me-2"></i>باقي على ليلة العمر</h2>
+                <div class="countdown-grid" id="timerBox">
+                    <div class="time-box"><div class="time-val" id="cntDays">00</div><div class="time-lbl">أيام</div></div>
+                    <div class="time-box"><div class="time-val" id="cntHours">00</div><div class="time-lbl">ساعات</div></div>
+                    <div class="time-box"><div class="time-val" id="cntMinutes">00</div><div class="time-lbl">دقائق</div></div>
+                    <div class="time-box"><div class="time-val" id="cntSeconds">00</div><div class="time-lbl">ثواني</div></div>
+                </div>
+                <div id="timerEndedMsg" class="font-kufi fs-5 text-success fw-bold d-none mt-3">❤️ اليوم هو يوم فرحتنا ❤️</div>
+            </div>
+        </section>
+
+        <!-- Couple Section -->
+        <section class="section-padding" id="couple">
+            <div class="card-custom text-center">
+                <div class="couple-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="العروسان">
+                </div>
+                <h2 class="font-ruqaa gold-metallic-text display-4 mb-2">ألفاهاشم ❤️ دينا</h2>
+                <div class="quote-box">
+                    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section class="section-padding" id="details">
+            <div class="card-custom text-center">
+                <h2 class="section-title"><i class="fa-solid fa-calendar-day me-2"></i>تفاصيل المناسبة</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                        <div class="text-start">
+                            <div class="fw-bold">التاريخ</div>
+                            <div class="text-muted">الخميس، 14 أغسطس 2026م</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="text-start">
+                            <div class="fw-bold">الوقت</div>
+                            <div class="text-muted">08:00 مساءً</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="text-start">
+                            <div class="fw-bold">المكان</div>
+                            <div class="text-muted">منزلهم خلف معسكر الاحتياطي المركزي - الكلاكلة</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="https://maps.google.com/?q=Khartoum+Al+Klakla" target="_blank" rel="noopener" class="btn-secondary-custom">
+                        <i class="fa-solid fa-map-location-dot me-2"></i> فتح الموقع على الخريطة
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Greetings Form -->
+        <section class="section-padding" id="greetings">
+            <div class="card-custom text-center">
+                <h2 class="section-title"><i class="fa-regular fa-comments me-2"></i>اترك تهنئتك للعروسين</h2>
+                <form id="wishFormCustom">
+                    <div class="form-group">
+                        <label for="wishNameInput" class="form-label">الاسم الكريـم</label>
+                        <input type="text" id="wishNameInput" class="form-input" placeholder="اكتب اسمك هنا..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wishMsgInput" class="form-label">تهنئتك أو الدعوة</label>
+                        <textarea id="wishMsgInput" class="form-input" rows="3" placeholder="اكتب تهنئتك للعروسين..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary-custom w-100 justify-content-center">
+                        <i class="fa-solid fa-paper-plane me-2"></i> إرسال التهنئة ❤️
+                    </button>
+                </form>
+                <div id="alertSuccess" class="alert alert-success mt-3 text-center rounded-pill d-none" style="padding: 10px; font-size: 0.9rem;">
+                    ✨ تم إرسال تهنئتك بنجاح! ستظهر فوراً في صفحة تبريكات العرسان.
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Share -->
+        <section class="section-padding" id="share">
+            <div class="card-custom text-center">
+                <h2 class="section-title"><i class="fa-brands fa-whatsapp me-2"></i>شارِك الفرحة</h2>
+                <p class="text-muted mb-4">يسعدنا أن تنشر هذه الدعوة للأقارب والأحباب لحضور المناسبة.</p>
+                <button onclick="shareViaWhatsApp()" class="btn-primary-custom" style="background: #25D366; color: #FFF;">
+                    <i class="fa-brands fa-whatsapp fs-4 me-2"></i> مشاركة الدعوة عبر الواتساب
+                </button>
+            </div>
+        </section>
+
+        <!-- QR Code Section -->
+        <section class="section-padding" id="qrcode">
+            <div class="card-custom text-center">
+                <h2 class="section-title"><i class="fa-solid fa-qrcode me-2"></i>رمز الاستجابة السريعة (QR Code)</h2>
+                <div class="qr-wrapper" id="qrContainer"></div>
+                <div>
+                    <button onclick="downloadQRCode()" class="btn-secondary-custom">
+                        <i class="fa-solid fa-download me-2"></i> تحميل QR Code
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-branding">
+            <p class="mb-1">Made with ❤️ by <a href="https://wa.me/249124893391" target="_blank">ZeroOne Digital Solutions</a></p>
+        </footer>
     </div>
 
-    <div class="container py-4">
-        <!-- Top Navigation / Couple Page Access -->
-        <div class="d-flex justify-content-end mb-3">
-            <a href="wishes.html" class="btn btn-outline-gold btn-sm">
-                <i class="fa-solid fa-lock me-1"></i>صفحة العرسان الخاصة
-            </a>
-        </div>
-
-        <!-- Main Invitation Header Card -->
-        <div class="luxury-card p-4 p-md-5 text-center animate__animated animate__fadeIn">
-            <div class="mb-3">
-                <i class="fa-solid fa-crown text-warning display-5"></i>
-            </div>
-            
-            <p class="font-kufi text-muted fs-5 mb-1">بسم الله الرحمن الرحيم</p>
-            <p class="font-kufi gold-text-metallic fs-6 fw-bold mb-4">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا"</p>
-
-            <h1 class="font-ruqaa display-2 gold-text-metallic my-3 fw-bold">ألفاهاشم & دينا</h1>
-            
-            <p class="fs-4 font-kufi text-dark fw-bold my-3">
-                يتشرفون بدعوتكم لحضور حفل الزفاف الميمون
-            </p>
-
-            <!-- Wedding Details Section -->
-            <div class="row justify-content-center my-4 g-3">
-                <div class="col-md-5">
-                    <div class="p-3 border rounded-4 bg-light h-100">
-                        <i class="fa-regular fa-calendar-check text-warning fs-3 mb-2"></i>
-                        <h5 class="font-kufi fw-bold">التاريخ</h5>
-                        <p class="mb-0 text-muted fs-5 fw-bold">14 / 8</p>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="p-3 border rounded-4 bg-light h-100">
-                        <i class="fa-solid fa-location-dot text-warning fs-3 mb-2"></i>
-                        <h5 class="font-kufi fw-bold">المكان</h5>
-                        <p class="mb-0 text-muted fw-bold">في منزلهم خلف معسكر الاحتياطي المركزي - الكلاكلة</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Music Player -->
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-8">
-                    <div class="luxury-player d-flex align-items-center justify-content-between flex-wrap gap-3">
-                        <div class="d-flex align-items-center">
-                            <i id="music-disc-icon" class="fa-solid fa-compact-disc fs-2 text-warning me-3"></i>
-                            <div class="text-start">
-                                <span class="d-block font-kufi gold-text-metallic fw-bold fs-5">🎵 سيرة سودانية</span>
-                                <span class="small text-light">استمع للأغنية أثناء التصفح والمباركة</span>
-                            </div>
-                        </div>
-                        <button id="play-btn" onclick="toggleAudio()" class="btn-gold-play shadow">
-                            <i id="play-icon" class="fa-solid fa-play me-2"></i><span id="play-text">تشغيل الأغنية</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Wishes Submission Form Section -->
-        <div class="row justify-content-center my-5">
-            <div class="col-lg-8">
-                <div class="luxury-card p-4 p-md-5">
-                    <h3 class="font-kufi text-center gold-text-metallic fw-bold mb-3">
-                        <i class="fa-regular fa-paper-plane me-2"></i>أرسل تهنئتك للعروسين
-                    </h3>
-                    <p class="text-center text-muted small mb-4">ستظهر مباركتك فوراً في البث المباشر المخصص للعرسان</p>
-
-                    <form id="wishForm">
-                        <div class="mb-3">
-                            <label for="senderName" class="form-label font-kufi fw-bold">الاسم الكريم</label>
-                            <input type="text" id="senderName" class="form-control form-control-lg rounded-pill border-warning" placeholder="أدخل اسمك هنا..." required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="senderMessage" class="form-label font-kufi fw-bold">رسالة التهنئة</label>
-                            <textarea id="senderMessage" class="form-control rounded-4 border-warning" rows="4" placeholder="اكتب مباركتك ودعواتك الطيبة للعرسان..." required></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-gold btn-lg w-100">
-                                <i class="fa-solid fa-heart me-2"></i>إرسال التهنئة الآن
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <div id="alertSuccess" class="alert alert-success mt-3 text-center rounded-pill d-none" role="alert">
-                        ✨ تم إرسال تهنئتك بنجاح! شكراً لمشاركتك الفرحة.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 🏢 ZeroOne Digital Solutions Company Footer -->
-    <footer class="zeroone-footer text-center">
-        <div class="container">
-            <p class="text-light mb-1 small fw-bold opacity-75">تم تنفيذ وتطوير الموقع بواسطة</p>
-            <div class="mb-2">
-                <a href="https://wa.me/249124893391" target="_blank" class="zeroone-title text-decoration-none text-white">
-                    <span class="zero">ZeroOne</span> Digital Solutions
-                </a>
-            </div>
-            <p class="text-light mb-4 small opacity-75">حلول برمجية متكاملة | تصميم دعوات ومواقع إلكترونية عصرية</p>
-
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <a href="https://wa.me/249124893391" target="_blank" class="social-circle-btn" title="تواصل عبر الواتساب"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://facebook.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
-
-    <!-- Firebase Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // 1. YouTube Player Integration
-      let player;
-      let isPlaying = false;
+        const CONFIG = {
+            targetDateTime: "2026-08-14T20:00:00",
+            youtubeAudioId: "Gi59P2PuTts",
+            firebase: {
+                apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
+                authDomain: "mosab-amna-wedding.firebaseapp.com",
+                databaseURL: "https://mosab-amna-wedding-default-rtdb.firebaseio.com",
+                projectId: "mosab-amna-wedding",
+                storageBucket: "mosab-amna-wedding.firebasestorage.app",
+                messagingSenderId: "579615543308",
+                appId: "1:579615543308:web:3a975c4c9c986407b09e29"
+            }
+        };
 
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('youtube-player', {
-          height: '1',
-          width: '1',
-          videoId: 'Gi59P2PuTts',
-          playerVars: { 
-            'autoplay': 0, 
-            'controls': 0, 
-            'loop': 1, 
-            'playlist': 'Gi59P2PuTts' 
-          },
-          events: { 'onStateChange': onPlayerStateChange }
-        });
-      }
+        let ytPlayer, isAudioPlaying = false;
 
-      function toggleAudio() {
-        if (!player || typeof player.playVideo !== 'function') return;
-
-        const icon = document.getElementById('play-icon');
-        const text = document.getElementById('play-text');
-        const disc = document.getElementById('music-disc-icon');
-
-        if (isPlaying) {
-          player.pauseVideo();
-          isPlaying = false;
-          icon.className = 'fa-solid fa-play me-2';
-          text.innerText = 'تشغيل الأغنية';
-          disc.classList.remove('fa-spin');
-        } else {
-          player.playVideo();
-          isPlaying = true;
-          icon.className = 'fa-solid fa-pause me-2';
-          text.innerText = 'إيقاف الأغنية';
-          disc.classList.add('fa-spin');
-        }
-      }
-
-      function onPlayerStateChange(event) {
-        if (event.data === YT.PlayerState.ENDED) player.playVideo();
-      }
-
-      // 2. Firebase Configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
-        authDomain: "mosab-amna-wedding.firebaseapp.com",
-        databaseURL: "https://mosab-amna-wedding-default-rtdb.firebaseio.com",
-        projectId: "mosab-amna-wedding",
-        storageBucket: "mosab-amna-wedding.firebasestorage.app",
-        messagingSenderId: "579615543308",
-        appId: "1:579615543308:web:3a975c4c9c986407b09e29"
-      };
-
-      if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
-      const db = firebase.database();
-
-      // Submit Wish Form
-      document.getElementById('wishForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('senderName').value;
-        const message = document.getElementById('senderMessage').value;
-
-        if (name.trim() && message.trim()) {
-            const newWishRef = db.ref('wishes').push();
-            newWishRef.set({
-                name: name.trim(),
-                message: message.trim(),
-                timestamp: Date.now()
-            }, function(error) {
-                if (!error) {
-                    document.getElementById('wishForm').reset();
-                    const alertBox = document.getElementById('alertSuccess');
-                    alertBox.classList.remove('d-none');
-                    setTimeout(() => alertBox.classList.add('d-none'), 5000);
-                } else {
-                    alert("حدث خطأ أثناء إرسال التهنئة، يرجى المحاولة لاحقاً.");
-                }
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('yt-player-element', {
+                height: '1', width: '1', videoId: CONFIG.youtubeAudioId,
+                playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': CONFIG.youtubeAudioId }
             });
         }
-      });
+
+        function toggleAudioState() {
+            if (!ytPlayer || typeof ytPlayer.playVideo !== 'function') return;
+            const btn = document.getElementById('musicToggleBtn');
+            const icon = document.getElementById('musicIcon');
+            if (isAudioPlaying) {
+                ytPlayer.pauseVideo(); isAudioPlaying = false;
+                btn.classList.remove('playing'); icon.className = 'fa-solid fa-music';
+            } else {
+                ytPlayer.playVideo(); isAudioPlaying = true;
+                btn.classList.add('playing'); icon.className = 'fa-solid fa-pause';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Countdown
+            const target = new Date(CONFIG.targetDateTime).getTime();
+            setInterval(() => {
+                const diff = target - new Date().getTime();
+                if (diff > 0) {
+                    document.getElementById('cntDays').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                    document.getElementById('cntHours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                    document.getElementById('cntMinutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                    document.getElementById('cntSeconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+                }
+            }, 1000);
+
+            // QR Code
+            new QRCode(document.getElementById('qrContainer'), { text: window.location.href, width: 150, height: 150 });
+
+            // Firebase Init
+            if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
+            const db = firebase.database();
+
+            document.getElementById('wishFormCustom').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('wishNameInput').value.trim();
+                const msg = document.getElementById('wishMsgInput').value.trim();
+                if (name && msg) {
+                    db.ref('wishes').push({ name: name, message: msg, timestamp: Date.now() })
+                    .then(() => {
+                        document.getElementById('wishFormCustom').reset();
+                        const alertBox = document.getElementById('alertSuccess');
+                        alertBox.classList.remove('d-none');
+                        setTimeout(() => alertBox.classList.add('d-none'), 4000);
+                    });
+                }
+            });
+        });
+
+        function shareViaWhatsApp() {
+            const text = `💍 دعوة زفاف ألفاهاشم & دينا\n\nيسعدنا حضوركم ومشاركتنا فرحتنا ❤️\n\nاضغط هنا لفتح الدعوة:\n${window.location.href}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function downloadQRCode() {
+            const canvas = document.querySelector('#qrContainer canvas');
+            if (canvas) {
+                const link = document.createElement('a');
+                link.download = 'wedding-qr.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }
+        }
     </script>
 </body>
 </html>
