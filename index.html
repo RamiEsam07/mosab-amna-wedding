@@ -15,15 +15,16 @@
     
     <style>
         :root {
-            --bg-ivory: #FAF8F5;
+            --bg-ivory: #FDFBF7;
             --white-card: #FFFFFF;
-            --gold-primary: #D4AF37;
-            --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
-            --gold-soft: rgba(212, 175, 55, 0.15);
-            --royal-blue: #0F172A;
-            --text-dark: #1E293B;
+            --gold-primary: #C5A059;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA771C 100%);
+            --gold-soft: rgba(197, 160, 89, 0.12);
+            --royal-dark: #1E293B;
+            --text-dark: #334155;
             --text-muted: #64748B;
-            --shadow-gold: 0 12px 35px rgba(212, 175, 55, 0.18);
+            --shadow-soft: 0 10px 30px rgba(197, 160, 89, 0.12);
+            --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.03);
         }
 
         body {
@@ -32,16 +33,15 @@
             color: var(--text-dark);
             overflow-x: hidden;
             background-image: 
-                radial-gradient(var(--gold-soft) 1.5px, transparent 1.5px),
-                radial-gradient(var(--gold-soft) 1.5px, var(--bg-ivory) 1.5px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+                radial-gradient(var(--gold-soft) 1.2px, transparent 1.2px),
+                radial-gradient(var(--gold-soft) 1.2px, var(--bg-ivory) 1.2px);
+            background-size: 36px 36px;
+            background-position: 0 0, 18px 18px;
         }
 
         .font-ruqaa { font-family: 'Aref Ruqaa', serif; }
         .font-kufi { font-family: 'Reem Kufi', sans-serif; }
 
-        /* Gold Gradient Text */
         .gold-text-metallic {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
@@ -49,150 +49,128 @@
             display: inline-block;
         }
 
-        /* Hero Container */
         .hero-section {
             position: relative;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FCFAFAF0 100%);
-            border-radius: 40px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%);
+            border-radius: 36px;
             border: 2px solid var(--gold-primary);
-            box-shadow: var(--shadow-gold);
-            padding: 50px 20px;
+            box-shadow: var(--shadow-soft);
+            padding: 45px 20px;
             overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, var(--gold-soft) 0%, transparent 70%);
-            border-radius: 50%;
         }
 
         .golden-badge {
             background: var(--gold-gradient);
-            color: var(--royal-blue);
+            color: var(--royal-dark);
             font-weight: 800;
-            padding: 8px 24px;
+            padding: 8px 22px;
             border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
             display: inline-block;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
-        /* Luxury Cards */
         .luxury-card {
             background: var(--white-card);
-            border-radius: 28px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            transition: all 0.4s ease;
+            border-radius: 26px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .luxury-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: var(--gold-primary);
-            box-shadow: var(--shadow-gold);
+            box-shadow: var(--shadow-soft);
         }
 
         .icon-gold-wrapper {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background: var(--gold-gradient);
-            color: var(--royal-blue);
-            border-radius: 20px;
+            color: #FFFFFF;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin: 0 auto 15px;
-            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3);
+            font-size: 1.5rem;
+            margin: 0 auto 14px;
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.25);
         }
 
-        /* Countdown Box */
-        .countdown-item {
-            background: #FAF8F5;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 18px;
-            padding: 12px;
-            min-width: 70px;
-        }
-
-        /* Audio Music Bar */
         .luxury-player {
-            background: var(--royal-blue);
+            background: var(--royal-dark);
             color: #FFFFFF;
-            border-radius: 35px;
-            padding: 15px 30px;
+            border-radius: 30px;
+            padding: 14px 28px;
             border: 2px solid var(--gold-primary);
-            box-shadow: var(--shadow-gold);
+            box-shadow: var(--shadow-soft);
         }
 
         .btn-gold-play {
             background: var(--gold-gradient);
-            color: var(--royal-blue);
+            color: var(--royal-dark);
             border-radius: 50px;
             border: none;
-            padding: 12px 30px;
+            padding: 10px 26px;
             font-weight: 800;
             transition: all 0.3s ease;
         }
 
         .btn-gold-play:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(253, 246, 186, 0.6);
-            color: var(--royal-blue);
+            transform: scale(1.04);
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+            color: var(--royal-dark);
         }
 
-        /* Inputs & Buttons */
         .form-control {
-            border-radius: 18px;
+            border-radius: 16px;
             border: 2px solid #E2E8F0;
-            padding: 14px 20px;
+            padding: 12px 18px;
             background-color: #FAFAFA;
         }
 
         .form-control:focus {
             border-color: var(--gold-primary);
             background-color: #FFFFFF;
-            box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 0 0.2rem rgba(197, 160, 89, 0.2);
         }
 
         .btn-luxury-submit {
             background: var(--gold-gradient);
-            color: var(--royal-blue);
-            border-radius: 20px;
+            color: var(--royal-dark);
+            border-radius: 18px;
             border: none;
             font-weight: 800;
-            padding: 15px;
+            padding: 14px;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 5px 18px rgba(197, 160, 89, 0.25);
         }
 
         .btn-luxury-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-            color: var(--royal-blue);
+            box-shadow: 0 8px 22px rgba(197, 160, 89, 0.35);
+            color: var(--royal-dark);
         }
 
-        /* Wishes Message Bubble */
-        .wish-card-luxury {
-            background: #FFFFFF;
-            border-radius: 22px;
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            border-right: 6px solid var(--gold-primary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        .btn-view-wishes {
+            background-color: transparent;
+            color: var(--gold-primary);
+            border: 2px solid var(--gold-primary);
+            border-radius: 18px;
+            padding: 12px;
+            font-weight: 700;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .wish-card-luxury:hover {
-            transform: scale(1.01);
-            border-color: var(--gold-primary);
+        .btn-view-wishes:hover {
+            background: var(--gold-gradient);
+            color: var(--royal-dark);
+            border-color: transparent;
         }
 
-        /* Hidden YouTube iframe */
         #yt-player-container {
             position: absolute;
             width: 1px;
@@ -201,21 +179,20 @@
             pointer-events: none;
         }
 
-        /* ZeroOne Branding Footer */
         .zeroone-footer {
-            background: var(--royal-blue);
+            background: var(--royal-dark);
             color: #FFFFFF;
             border-top: 4px solid var(--gold-primary);
-            border-radius: 40px 40px 0 0;
-            padding: 45px 20px 30px;
-            margin-top: 70px;
+            border-radius: 36px 36px 0 0;
+            padding: 40px 20px 28px;
+            margin-top: 60px;
         }
 
         .zeroone-title {
             font-family: 'Reem Kufi', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
         }
 
         .zeroone-title span.zero {
@@ -225,8 +202,8 @@
         }
 
         .social-circle-btn {
-            width: 52px;
-            height: 52px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--gold-primary);
@@ -234,40 +211,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .social-circle-btn:hover {
             background: var(--gold-gradient);
-            color: var(--royal-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            color: var(--royal-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(197, 160, 89, 0.35);
         }
 
         .btn-cta-gold {
             background: var(--gold-gradient);
-            color: var(--royal-blue);
+            color: var(--royal-dark);
             font-weight: 800;
-            padding: 14px 35px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.25);
             transition: all 0.3s ease;
         }
 
         .btn-cta-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
-            color: var(--royal-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
+            color: var(--royal-dark);
         }
     </style>
 </head>
 <body>
 
-    <!-- Hidden YouTube Player for Audio -->
+    <!-- Hidden YouTube Player for Background Audio -->
     <div id="yt-player-container">
         <div id="youtube-player"></div>
     </div>
@@ -305,7 +282,7 @@
                         <div class="d-flex align-items-center">
                             <i id="music-disc-icon" class="fa-solid fa-compact-disc fs-2 text-warning me-3"></i>
                             <div class="text-start">
-                                <span class="d-block font-kufi gold-text-metallic fw-bold fs-5">🎵 سيرة سودانية (ألف مبروك)</span>
+                                <span class="d-block font-kufi gold-text-metallic fw-bold fs-5">🎵 سيرة سودانية</span>
                                 <span class="small text-light">استمع للأغنية أثناء التصفح والمباركة</span>
                             </div>
                         </div>
@@ -317,13 +294,13 @@
             </div>
         </header>
 
-        <!-- Form and Wishes Container -->
-        <div class="row g-4 my-2">
-            <!-- Wish Form Section -->
-            <div class="col-lg-5">
-                <div class="luxury-card p-4 h-100">
-                    <h4 class="font-kufi fw-bold mb-3 gold-text-metallic"><i class="fa-solid fa-feather-pointed me-2"></i>اكتب تهنئتك للعروسين</h4>
-                    <form id="wish-form">
+        <!-- Form Section -->
+        <div class="row justify-content-center my-4">
+            <div class="col-lg-8">
+                <div class="luxury-card p-4 p-md-5 text-center">
+                    <h3 class="font-kufi fw-bold mb-3 gold-text-metallic"><i class="fa-solid fa-feather-pointed me-2"></i>أرسل تهنئتك للعروسين</h3>
+                    <p class="text-muted mb-4">اكتب كلمتك الطيبة ومباركتك لتظهر فوراً في سجل تبريكات العرسان</p>
+                    <form id="wish-form" class="text-start">
                         <div class="mb-3">
                             <label for="wish-name" class="form-label fw-bold">الاسم الكريـم</label>
                             <input type="text" class="form-control" id="wish-name" placeholder="اكتب اسمك هنا..." required>
@@ -332,23 +309,19 @@
                             <label for="wish-message" class="form-label fw-bold">نص التهنئة</label>
                             <textarea class="form-control" id="wish-message" rows="4" placeholder="بارك الله لكما وبارك عليكما وجمع بينكما في خير..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-luxury-submit w-100 fs-5">
-                            <i class="fa-solid fa-paper-plane me-2"></i>إرسال المباركة
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Wishes Live Stream List -->
-            <div class="col-lg-7">
-                <div class="luxury-card p-4 h-100">
-                    <h4 class="font-kufi fw-bold mb-3 gold-text-metallic"><i class="fa-solid fa-comments me-2"></i>دفتر تبريكات الأحباب المباشر</h4>
-                    <div id="wishes-container" style="max-height: 420px; overflow-y: auto;">
-                        <div class="text-center text-muted py-5">
-                            <div class="spinner-border text-warning mb-2" role="status"></div>
-                            <p class="mb-0">جاري جلب التهاني والتبريكات...</p>
+                        <div class="row g-2">
+                            <div class="col-md-7">
+                                <button type="submit" class="btn btn-luxury-submit w-100 fs-5">
+                                    <i class="fa-solid fa-paper-plane me-2"></i>إرسال المباركة
+                                </button>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="wishes.html" class="btn btn-view-wishes w-100 text-center fs-6">
+                                    <i class="fa-solid fa-eye me-2"></i>عرض تبريكات الجميع
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -366,8 +339,7 @@
             </div>
             
             <p class="text-light mb-4 small opacity-75">حلول برمجية متكاملة | تصميم دعوات ومواقع إلكترونية عصرية</p>
-            
-            <!-- Social Accounts -->
+
             <div class="d-flex justify-content-center gap-3 mb-4">
                 <a href="https://facebook.com" target="_blank" class="social-circle-btn" title="فيسبوك ZeroOne">
                     <i class="fa-brands fa-facebook-f"></i>
@@ -388,15 +360,12 @@
         </div>
     </footer>
 
-    <!-- YouTube IFrame API -->
+    <!-- YouTube IFrame API & Firebase -->
     <script src="https://www.youtube.com/iframe_api"></script>
-
-    <!-- Firebase CDN SDKs -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      // 1. YouTube Player Integration (رابط الأغنية المحددة)
       let player;
       let isPlaying = false;
 
@@ -404,13 +373,8 @@
         player = new YT.Player('youtube-player', {
           height: '1',
           width: '1',
-          videoId: 'Hgt2V4gmfwA', // رابط أغنية السيرة السودانية المحددة
-          playerVars: { 
-            'autoplay': 0, 
-            'controls': 0, 
-            'loop': 1, 
-            'playlist': 'Hgt2V4gmfwA' 
-          },
+          videoId: 'Gi59P2PuTts',
+          playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': 'Gi59P2PuTts' },
           events: { 'onStateChange': onPlayerStateChange }
         });
       }
@@ -441,7 +405,6 @@
         if (event.data === YT.PlayerState.ENDED) player.playVideo();
       }
 
-      // 2. Firebase Database Integration
       const firebaseConfig = {
         apiKey: "AIzaSyDLo0o7DrvOn9DlgbLRf_8jqs-Jo1IPOkU",
         authDomain: "mosab-amna-wedding.firebaseapp.com",
@@ -455,37 +418,6 @@
 
       if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
       const db = firebase.database();
-
-      function loadWishes() {
-        const container = document.getElementById('wishes-container');
-        if (!container) return;
-
-        db.ref('wishes').on('value', (snapshot) => {
-          container.innerHTML = '';
-
-          if (snapshot.exists()) {
-            const data = snapshot.val();
-            Object.values(data).reverse().forEach(wish => {
-              container.innerHTML += `
-                <div class="wish-card-luxury p-3 my-2">
-                  <strong class="d-block gold-text-metallic fs-6 mb-1"><i class="fa-solid fa-crown me-1 small text-warning"></i>${escapeHtml(wish.name)}</strong>
-                  <p class="mb-0 text-dark fs-6">${escapeHtml(wish.message)}</p>
-                </div>
-              `;
-            });
-          } else {
-            container.innerHTML = '<p class="text-center text-muted py-4">لا توجد تبريكات حتى الآن، كن أول من يبارك للعروسين!</p>';
-          }
-        }, (error) => {
-          console.error(error);
-          container.innerHTML = '<p class="text-center text-danger py-4">حدث خطأ أثناء جلب التهاني</p>';
-        });
-      }
-
-      function escapeHtml(str) {
-        if (!str) return '';
-        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-      }
 
       function submitWish(event) {
         event.preventDefault();
@@ -504,7 +436,8 @@
         }).then(() => {
           nameInput.value = '';
           msgInput.value = '';
-          alert('تم إرسال مباركتك بنجاح!');
+          alert('تم إرسال مباركتك بنجاح! يمكنك الآن مشاهدتها في صفحة التهاني.');
+          window.location.href = "wishes.html";
         }).catch((err) => {
           console.error(err);
           alert('حدث خطأ أثناء الإرسال');
@@ -512,7 +445,6 @@
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-        loadWishes();
         document.getElementById('wish-form').addEventListener('submit', submitWish);
       });
     </script>
